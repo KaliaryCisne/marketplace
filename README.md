@@ -5,8 +5,10 @@ basic project with laravel framework.
 ## Installation
 
 ```bash
-git cloning ....;
+git clone git@github.com:KaliaryCisne/marketplace.git;
+
 cd marketplace
+
 composer install
 ```
 
