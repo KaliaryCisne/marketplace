@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
+
+    protected $fillable = ['name', 'description', 'phone', 'mobile_phone', 'slug'];
+
     /**
      * Retorna o usuário ao qual pertence a loja
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -14,7 +17,6 @@ class Store extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 
     /**
      * Retorna os produtos da loja
