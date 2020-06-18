@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Retorna a loja que pertence ao usuário
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function store()
+    {
+        return $this->hasOne(Store::class);
+    }
 }
