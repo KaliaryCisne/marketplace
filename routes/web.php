@@ -24,6 +24,7 @@ Route::get('/users', function () {
 
 $basePath = App::basePath();
 
+//Inclui os arquivos de rotas
 foreach(glob($basePath.'/routes/*-routes.php') as $route) {
     include $route;
 }
