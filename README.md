@@ -5,11 +5,17 @@ basic project with laravel framework.
 ## Installation
 
 ```bash
-git clone git@github.com:KaliaryCisne/marketplace.git;
+git clone git@github.com:KaliaryCisne/marketplace.git
 
 cd marketplace
 
 composer install
+
+cp .env.example .env
+
+php artisan key:generate
+
+php artisan serve
 ```
 
 ## Usage
