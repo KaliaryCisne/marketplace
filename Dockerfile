@@ -1,5 +1,6 @@
 FROM bitnami/minideb:buster
 RUN mkdir -p /var/www
+RUN chmod a+x -rf .
 ADD . /var/www
 WORKDIR /var/www
 RUN chmod +x /var/www/dependencies/build.sh
