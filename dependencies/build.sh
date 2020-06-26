@@ -5,7 +5,9 @@ apt-get update
 apt-get upgrade -y
 
 # Instala a versao 7.4 do php
-apt-get install software-properties-common
+apt-get install -y software-properties-common
+apt-get install -y language-pack-en-base
+LC_ALL=en_US.UTF-8
 add-apt-repository ppa:ondrej/php
 apt-get update
 apt-get install php7.4
