@@ -15,3 +15,5 @@ apt-get install -y $(awk '{print $1'} /var/www/dependecies/linux_packages.list)
 
 # Habilita as extensões do PHP
 phpenmod $(awk '{print $1'} /var/www/dependecies/php_extensions.list)
+
+php artisan serve

@@ -7,7 +7,6 @@ services:
     restart: unless-stopped
     ports:
     - 3306:3306
-    - 8000:80
 #    command: --init-file /data/application/init.sql
     volumes:
     - ./bkp/mysql:/var/lib/mysql
@@ -21,3 +20,5 @@ services:
     build: .
     stdin_open: true
     tty: true
+    ports:
+    - 8000:80
