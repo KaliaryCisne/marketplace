@@ -7,4 +7,3 @@ RUN /var/www/azure/build.sh
 EXPOSE 80
 RUN chmod +x /var/www/azure/run.sh
 CMD /var/www/azure/run.sh
-CMD /usr/sbin/apache2ctl -D FOREGROUND

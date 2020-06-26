@@ -7,9 +7,17 @@ services:
     restart: unless-stopped
     ports:
     - 3306:3306
+    - 8000:80
 #    command: --init-file /data/application/init.sql
     volumes:
     - ./bkp/mysql:/var/lib/mysql
+    - ./:/var/www
 #    - ./config/databases/scripts/init.sql:/data/application/init.sql
     env_file:
     - .env
+  application:
+    image: marketplace
+    container_name: marketplace
+    build: .
+    stdin_open: true
+    tty: true

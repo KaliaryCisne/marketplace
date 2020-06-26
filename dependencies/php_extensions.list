@@ -1,0 +1,14 @@
+gd
+imagick
+intl
+json
+ldap
+mbstring
+mysqli
+mysqlnd
+pdo_mysql
+posix
+readline
+soap
+sockets
+tokenizer
