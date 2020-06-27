@@ -14,14 +14,32 @@ composer install
 cp .env.example .env
 
 php artisan key:generate
+```
 
-php artisan serve
+## Installation using Docker
+
+```bash
+git clone git@github.com:KaliaryCisne/marketplace.git
+
+cd marketplace
+
+composer install
+
+cp .env.example .env
+
+php artisan key:generate
 ```
 
 ## Usage
 
 ```bash
 php artisan serve
+```
+
+## Usage with docker
+
+```bash
+docker-compose up -d
 ```
 
 ## License

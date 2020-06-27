@@ -10,15 +10,16 @@ services:
     ports:
     - 3306:3306
     volumes:
-    - ./bkp/mysql:/var/lib/mysql
-    - ./:/var/www
+    - ./data/:/var/lib/mysql
     env_file:
     - .env
   application:
-    image: marketplace
     container_name: marketplace
-    build: .
-    stdin_open: true
-    tty: true
+    network_mode: host
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
     ports:
-    - 8000:80
+    - 8000:8000
+    volumes:
+    - ./:/var/www

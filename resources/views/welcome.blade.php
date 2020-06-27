@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel melhor que Yii!
                 </div>
 
                 <div class="links">
