@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mysql:
+    depends_on:
+      - application
+    network_mode: host
+    image: mysql:5.7
+    container_name: db_marketplace
+    restart: unless-stopped
+    ports:
+    - 3306:3306
+    volumes:
+    - ./data/:/var/lib/mysql
+    env_file:
+    - .env
+  application:
+    container_name: marketplace
+    network_mode: host
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+    - 8000:8000
+    volumes:
+    - ./:/var/www
