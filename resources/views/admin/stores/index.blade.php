@@ -1,20 +1,29 @@
 @extends('layout.app')
 
 @section('content')
+
+    <div class="mt-5 mb-5">
+        <a href="{{route('admin.stores.create')}}" class="btn btn-lg btn-success">Criar loja</a>
+    </div>
+
     <table class="table table-striped">
         <thead>
         <tr>
             <th>#</th>
             <th>Loja</th>
             <th>Ações</th>
+
         </tr>
         </thead>
         <tbody>
         @foreach($stores as $store)
             <tr>
-                <th>{{$store->id}} | </th>
-                <th>{{$store->name}}</th>
-                <th></th>
+                <td>{{$store->id}} </td>
+                <td>{{$store->name}}</td>
+                <td>
+                    <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-primary">Editar</a>
+                    <a href="{{route('admin.stores.destroy', ['store' => $store->id])}}" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
             </tr>
         @endforeach
         </tbody>

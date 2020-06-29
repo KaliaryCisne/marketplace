@@ -4,7 +4,7 @@
 
     <h1>Criar loja</h1>
 
-    <form action="/admin/stores/store" method="post">
+    <form action="{{route('admin.stores.store')}}" method="post">
         @csrf()
         <div class="form-group">
             <label for="">Nome da loja</label>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-success">Criar loja</button>
+            <button type="submit" class="btn btn-lg btn-success">Salvar</button>
         </div>
 
     </form>

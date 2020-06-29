@@ -4,7 +4,7 @@
 
     <h1>Editar loja</h1>
 
-    <form action="/admin/stores/update/{{$store->id}}" method="post">
+    <form action="{{route('admin.stores.update', ['store' => $store->id])}}" method="post">
         @csrf()
         <div class="form-group">
             <label for="">Nome da loja</label>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-success">Atualizar loja</button>
+            <button type="submit" class="btn btn-lg btn-success">Salvar</button>
         </div>
 
     </form>
