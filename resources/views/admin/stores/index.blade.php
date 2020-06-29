@@ -1,12 +1,15 @@
-<table>
-    <thead>
+@extends('layout.app')
+
+@section('content')
+    <table class="table table-striped">
+        <thead>
         <tr>
             <th>#</th>
             <th>Loja</th>
             <th>Ações</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         @foreach($stores as $store)
             <tr>
                 <th>{{$store->id}} | </th>
@@ -14,7 +17,8 @@
                 <th></th>
             </tr>
         @endforeach
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
-{{$stores->links()}}
+    {{$stores->links()}}
+@endsection
