@@ -25,6 +25,7 @@
             <label for="">Celular/Whatsapp</label>
             <input type="text" name="mobile_phone" class="form-control">
         </div>
+
         <div class="form-group">
             <label for="">Slug</label>
             <input type="text" name="slug" class="form-control">
