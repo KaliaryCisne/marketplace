@@ -23,7 +23,7 @@
                 <td>{{$product->id}} </td>
                 <td>{{$product->name}}</td>
                 <td>R$ {{number_format($product->price, 2, ',', '.')}}</td>
-                <td>{{$product->loja->name}}</td>
+                <td>{{$product->store->name}}</td>
                 <td>
                     <div class="btn-group">
                         <div class="btn-group">
