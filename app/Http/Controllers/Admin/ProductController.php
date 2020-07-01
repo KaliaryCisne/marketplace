@@ -3,10 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Product;
+use App\Store;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    private $product;
+
+    public function __construct(Product $product)
+    {
+        $this->product = $product;
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +24,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = $this->product->paginate(10);
+
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -24,7 +36,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $stores = Store::all(['id', 'name']);
+
+        return view('admin.products.create', compact('stores'));
     }
 
     /**
@@ -35,7 +49,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $store = Store::find($data['store']);
+        $store->products()->create($data);
+
+        flash('Produto criado com sucesso!')->success();
+        return redirect()->route('admin.products.index');
     }
 
     /**
@@ -57,7 +77,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = $this->product->findOrFail($id);
+
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -69,7 +91,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $product = $this->product->find($id);
+        $product->update($data);
+
+        flash('Produto atualizado com sucesso!')->success();
+        return redirect()->route('admin.products.index');
     }
 
     /**
@@ -80,6 +108,10 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = $this->product->find($id);
+        $product->delete();
+
+        flash('Produto removido com sucesso!')->success();
+        return redirect()->route('admin.products.index');
     }
 }
