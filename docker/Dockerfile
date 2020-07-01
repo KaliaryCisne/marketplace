@@ -65,5 +65,5 @@ COPY ./docker/xdebug.ini /etc/php/7.4/cli/conf.d/20-xdebug.ini
 
 WORKDIR /var/www
 
-CMD php artisan serve
+#CMD php artisan serve
 

@@ -21,5 +21,6 @@ services:
       dockerfile: ./docker/Dockerfile
     ports:
     - 8000:8000
+    command: "php -S localhost:8000 public/index.php"
     volumes:
     - ./:/var/www
