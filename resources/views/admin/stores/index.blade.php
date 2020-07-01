@@ -22,7 +22,11 @@
                 <td>{{$store->name}}</td>
                 <td>
                     <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-primary">Editar</a>
-                    <a href="{{route('admin.stores.destroy', ['store' => $store->id])}}" class="btn btn-sm btn-danger">Excluir</a>
+                    <form action="{{route('admin.stores.destroy', ['store' => $store->id])}}" method="POST">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" class="btn btn-sm btn-danger">REMOVER</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
