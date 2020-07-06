@@ -16,3 +16,7 @@ $basePath = App::basePath();
 foreach(glob($basePath.'/routes/*-routes.php') as $route) {
     include $route;
 }
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
