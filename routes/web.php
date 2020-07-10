@@ -3,6 +3,7 @@
 use App\User;
 use Illuminate\Support\Facades\App;
 
+Route::get('/', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function () {
 
     //Inclui os arquivos de rotas administrativas
@@ -15,8 +16,7 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/users',  function () {
     return User::all();
