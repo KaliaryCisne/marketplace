@@ -9,6 +9,12 @@ use App\User;
 
 class StoreController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('user.has.store')->only(['create', 'store']);
+    }
+
     public function index()
     {
 //        $stores = Store::paginate(10);
@@ -18,11 +24,6 @@ class StoreController extends Controller
 
     public function create()
     {
-        if(auth()->user()->store()->count()) {
-            flash('Você já possui uma loja cadastrada!')->warning();
-            return redirect()->route('admin.stores.index');
-        }
-
         $users = User::all(['id', 'name']);
 
         return view('admin.stores.create', compact( 'users'));
@@ -30,11 +31,6 @@ class StoreController extends Controller
 
     public function store(StoreRequest $request)
     {
-        if(auth()->user()->store()->count()) {
-            flash('Você já possui uma loja cadastrada!')->warning();
-            return redirect()->route('admin.stores.index');
-        }
-
         $data = $request->all();
 
 //        $user = User::find($data['user']);
