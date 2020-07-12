@@ -32,15 +32,6 @@
         </div>
 
         <div class="form-group">
-            <label for="">Usuário</label>
-            <select name="user" class="form-control">
-                @foreach($users as $user)
-                    <option value="{{$user->id}}">{{$user->name}}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="form-group">
             <button type="submit" class="btn btn-lg btn-success">Salvar</button>
         </div>
 
