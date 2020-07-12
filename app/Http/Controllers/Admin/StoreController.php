@@ -11,13 +11,18 @@ class StoreController extends Controller
 {
     public function index()
     {
-        $stores = Store::paginate(10);
-
-        return view('admin.stores.index', compact('stores'));
+//        $stores = Store::paginate(10);
+        $store = auth()->user()->store;
+        return view('admin.stores.index', compact('store'));
     }
 
     public function create()
     {
+        if(auth()->user()->store()->count()) {
+            flash('Você já possui uma loja cadastrada!')->warning();
+            return redirect()->route('admin.stores.index');
+        }
+
         $users = User::all(['id', 'name']);
 
         return view('admin.stores.create', compact( 'users'));
@@ -25,6 +30,11 @@ class StoreController extends Controller
 
     public function store(StoreRequest $request)
     {
+        if(auth()->user()->store()->count()) {
+            flash('Você já possui uma loja cadastrada!')->warning();
+            return redirect()->route('admin.stores.index');
+        }
+
         $data = $request->all();
 
 //        $user = User::find($data['user']);
