@@ -7,6 +7,7 @@
         <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Total products</th>
             <th>Settings</th>
 
         </tr>
@@ -15,6 +16,7 @@
             <tr>
                 <td>{{$store->id}} </td>
                 <td>{{$store->name}}</td>
+                <td>{{$store->products->count()}}</td>
                 <td>
                     <div class="row">
                         <div class="col">

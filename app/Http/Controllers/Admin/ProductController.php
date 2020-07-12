@@ -9,6 +9,7 @@ use App\Store;
 
 class ProductController extends Controller
 {
+    // php artisan make:request ProductRequest => Cria um formRequest
     private $product;
 
     public function __construct(Product $product)
@@ -51,7 +52,8 @@ class ProductController extends Controller
     {
         $data = $request->all();
 
-        $store = Store::find($data['store']);
+//        $store = Store::find($data['store']);
+        $store = auth()->user()->store;
         $store->products()->create($data);
 
         flash('Produto criado com sucesso!')->success();
