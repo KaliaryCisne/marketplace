@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Marketplace</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url(mix('assets/css/styles.css')) }}" type="text/css" >
 </head>
-<body class="bg-dark">
+<body class="bg-dark body-customized">
     <nav class="navbar navbar-expand-lg navbar-dark" style="margin-bottom: 40px; background: #7159c1;">
         <a class="navbar-brand" href="#">Marketplace L6</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

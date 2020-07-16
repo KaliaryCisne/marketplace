@@ -7,7 +7,7 @@
             {{$products->links()}}
         </div>
         <div class="col-md-6">
-            <a href="{{route('admin.products.create')}}" class="btn btn-md btn-outline-success float-right">add product</a>
+            <a href="{{route('admin.products.create')}}" class="btn btn-md btn-outline-success float-right mb-3">add product</a>
         </div>
     </div>
 

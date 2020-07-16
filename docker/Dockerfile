@@ -63,7 +63,15 @@ COPY ./docker/locale.gen /etc/locale.gen
 
 COPY ./docker/xdebug.ini /etc/php/7.4/cli/conf.d/20-xdebug.ini
 
+#RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - \
+#    apt-get install -y nodejs \
+#    apt-get update
+
+
 WORKDIR /var/www
+
+#RUN npm install \
+#    npm run production
 
 #CMD php artisan serve
 

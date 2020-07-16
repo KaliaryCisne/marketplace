@@ -25,8 +25,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = $this->product->paginate(10);
-
+        $userStore = auth()->user()->store;
+        $products = $userStore->products()->paginate(10);
         return view('admin.products.index', compact('products'));
     }
 
@@ -98,6 +98,7 @@ class ProductController extends Controller
 
         $product = $this->product->find($id);
         $product->update($data);
+        $product->categories()->sync($data['categories']);
 
         flash('Produto atualizado com sucesso!')->success();
         return redirect()->route('admin.products.index');

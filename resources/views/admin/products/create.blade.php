@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text-white">New Product</h1>
+    <h1>New Product</h1>
 
     <form action="{{route('admin.products.store')}}" method="post" class="p-4 mb-5 text-white" style="border: 2px solid #7159c1; border-radius: 25px ;">
         <div class="row d-flex justify-content-around">
