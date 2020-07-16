@@ -8,14 +8,14 @@
     <title>Marketplace</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 40px;">
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="margin-bottom: 40px; background: #7159c1;">
         <a class="navbar-brand" href="#">Marketplace L6</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             @auth
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item @if(request()->is('admin/stores*')) active @endif">

@@ -2,18 +2,14 @@
 
 @section('content')
 
-    <div class="mt-5 mb-5">
-        <a href="{{route('admin.products.create')}}" class="btn btn-lg btn-success">Adicionar produto</a>
-    </div>
-
-    <table class="table table-striped">
-        <thead>
+    <table class="table table-dark">
+        <thead style="background: #7159c1;">
         <tr>
             <th>#</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Loja</th>
-            <th>Ações</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Store</th>
+            <th>Settings</th>
 
         </tr>
         </thead>
@@ -25,16 +21,14 @@
                 <td>R$ {{number_format($product->price, 2, ',', '.')}}</td>
                 <td>{{$product->store->name}}</td>
                 <td>
-                    <div class="btn-group">
-                        <div class="btn-group">
-                            <a href="{{route('admin.products.edit', ['product' => $product->id])}}" class="btn btn-sm btn-primary" >Editar</a>
+                    <div class="row">
+                        <a href="{{route('admin.products.edit', ['product' => $product->id])}}" class="btn btn-sm btn-outline-primary mr-2" >EDIT</a>
 
-                            <form action="{{route('admin.products.destroy', ['product' => $product->id])}}" method="POST">
-                                @csrf
-                                @method("DELETE")
-                                <button type="submit" class="btn btn-sm btn-danger">REMOVER</button>
-                            </form>
-                        </div>
+                        <form action="{{route('admin.products.destroy', ['product' => $product->id])}}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-sm btn-outline-danger">REMOVE</button>
+                        </form>
                     </div>
                 </td>
             </tr>
@@ -42,5 +36,13 @@
         </tbody>
     </table>
 
-    {{$products->links()}}
+    <div class="row mt-5">
+        <div class="col-md-6">
+            {{$products->links()}}
+        </div>
+        <div class="col-md-6">
+            <a href="{{route('admin.products.create')}}" class="btn btn-md btn-outline-success float-right">add product</a>
+        </div>
+
+    </div>
 @endsection

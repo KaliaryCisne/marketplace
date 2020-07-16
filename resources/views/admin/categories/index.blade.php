@@ -3,14 +3,12 @@
 
 @section('content')
 
-    <a href="{{route('admin.categories.create')}}" class="btn btn-lg btn-success">Criar Categoria</a>
-
-    <table class="table table-striped">
-        <thead>
+    <table class="table table-dark">
+        <thead style="background: #7159c1;">
         <tr>
             <th>#</th>
-            <th>Nome</th>
-            <th>Ações</th>
+            <th>Name</th>
+            <th>Settings</th>
         </tr>
         </thead>
         <tbody>
@@ -19,12 +17,13 @@
                 <td>{{$category->id}}</td>
                 <td>{{$category->name}}</td>
                 <td width="15%">
-                    <div class="btn-group">
-                        <a href="{{route('admin.categories.edit', ['category' => $category->id])}}" class="btn btn-sm btn-primary">EDITAR</a>
+                    <div class="row">
+                        <a href="{{route('admin.categories.edit', ['category' => $category->id])}}" class="btn btn-sm btn-outline-primary mr-2">EDIT</a>
+
                         <form action="{{route('admin.categories.destroy', ['category' => $category->id])}}" method="post">
                             @csrf
                             @method("DELETE")
-                            <button type="submit" class="btn btn-sm btn-danger">REMOVER</button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger">REMOVE</button>
                         </form>
                     </div>
                 </td>
@@ -32,4 +31,8 @@
         @endforeach
         </tbody>
     </table>
+
+    <div class="mt-5 float-right">
+        <a href="{{route('admin.categories.create')}}" class="btn btn-md btn-outline-success">add category</a>
+    </div>
 @endsection
