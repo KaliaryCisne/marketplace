@@ -3,6 +3,12 @@
 
 @section('content')
 
+    <div class="row mt-5 mb-3">
+        <div class="col">
+            <a href="{{route('admin.categories.create')}}" class="btn btn-md btn-outline-success float-right">add category</a>
+        </div>
+    </div>
+
     <table class="table table-dark">
         <thead style="background: #7159c1;">
         <tr>
@@ -31,8 +37,4 @@
         @endforeach
         </tbody>
     </table>
-
-    <div class="mt-5 float-right">
-        <a href="{{route('admin.categories.create')}}" class="btn btn-md btn-outline-success">add category</a>
-    </div>
 @endsection

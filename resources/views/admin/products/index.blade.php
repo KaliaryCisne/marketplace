@@ -2,6 +2,15 @@
 
 @section('content')
 
+    <div class="row mt-5">
+        <div class="col-md-6">
+            {{$products->links()}}
+        </div>
+        <div class="col-md-6">
+            <a href="{{route('admin.products.create')}}" class="btn btn-md btn-outline-success float-right">add product</a>
+        </div>
+    </div>
+
     <table class="table table-dark">
         <thead style="background: #7159c1;">
         <tr>
@@ -35,14 +44,4 @@
         @endforeach
         </tbody>
     </table>
-
-    <div class="row mt-5">
-        <div class="col-md-6">
-            {{$products->links()}}
-        </div>
-        <div class="col-md-6">
-            <a href="{{route('admin.products.create')}}" class="btn btn-md btn-outline-success float-right">add product</a>
-        </div>
-
-    </div>
 @endsection

@@ -4,9 +4,9 @@
 
     <h1 class="text-white">New Product</h1>
 
-    <form action="{{route('admin.products.store')}}" method="post" class="p-4 mb-5 rounded text-white" style="background: #7159c1;">
+    <form action="{{route('admin.products.store')}}" method="post" class="p-4 mb-5 text-white" style="border: 2px solid #7159c1; border-radius: 25px ;">
         <div class="row d-flex justify-content-around">
-            <div class="col-md-6">
+            <div class="col-md-8" style="border-color: #7159c1;">
                 @csrf()
                 <div class="form-group">
                     <label for="">Name</label>
@@ -33,8 +33,8 @@
                 <div class="form-group">
                     <label for="">Content</label>
                     <textarea name="body" id="" cols="30" rows="10" class="form-control @error('body') is-invalid @enderror">
-                {{old('body')}}
-            </textarea>
+                        {{old('body')}}
+                    </textarea>
 
                     @error('body')
                     <div class="invalid-feedback">
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-md btn-outline-success float-right">Save</button>
+                    <button type="submit" class="btn btn-md btn-outline-success float-right font-weight-bold">Save</button>
                 </div>
             </div>
         </div>
