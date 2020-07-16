@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <table class="table table-striped">
-        <thead>
+    <table class="table table-dark">
+        <thead style="background: #7159c1;">
         <tr>
             <th>#</th>
             <th>Name</th>
@@ -19,16 +19,14 @@
                 <td>{{$store->products->count()}}</td>
                 <td>
                     <div class="row">
-                        <div class="col">
-                            <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-primary">Edit</a>
-                        </div>
-                        <div class="col">
+
+                            <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-outline-primary mr-2">EDIT</a>
                             <form action="{{route('admin.stores.destroy', ['store' => $store->id])}}" method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-outline-danger">DELETE</button>
                             </form>
-                        </div>
+
                     </div>
                 </td>
             </tr>
@@ -37,7 +35,7 @@
 
     @if(!$store)
         <div class="mt-5 mb-5">
-            <a href="{{route('admin.stores.create')}}" class="btn btn-lg btn-success">Create store</a>
+            <a href="{{route('admin.stores.create')}}" class="btn btn-md btn-success">Create store</a>
         </div>
     @endif
 @endsection
