@@ -51,7 +51,6 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $data = $request->all();
-//        $store = Store::find($data['store']);
         $store = auth()->user()->store;
         $product = $store->products()->create($data);
         $product->categories()->sync($data['categories']);
