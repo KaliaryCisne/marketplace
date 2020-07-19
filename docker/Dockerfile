@@ -57,7 +57,8 @@ RUN phpenmod \
       sqlite3 \
       sybase \
       xml \
-      zip
+      zip \
+      xdebug
 
 COPY ./docker/locale.gen /etc/locale.gen
 
