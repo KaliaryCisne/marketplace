@@ -19,3 +19,5 @@ mix.styles([
 ], 'public/assets/css/styles.css').version();
 
 
+//npm run dev -> mapeia os asssets para a pasta pública
+//npm run production -> mapeia os asssets para a pasta pública de forma mimificada
