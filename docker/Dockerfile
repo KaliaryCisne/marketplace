@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN mkdir -p /var/www
-ADD . /var/www
+#ADD . /var/www
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y software-properties-common && \
@@ -22,11 +22,9 @@ RUN apt-get update && \
       php7.4-imagick \
       php7.4-intl \
       php7.4-json \
-      php7.4-ldap \
       php7.4-mbstring \
       php7.4-mysql \
       php7.4-opcache \
-      php7.4-pgsql \
       php7.4-soap \
       php7.4-sybase \
       php7.4-xml \
@@ -52,9 +50,7 @@ RUN phpenmod \
       mysql \
       opcache \
       pear \
-      pgsql \
       soap \
-      sqlite3 \
       sybase \
       xml \
       zip \
