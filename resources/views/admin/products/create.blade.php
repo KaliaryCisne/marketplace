@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <h1>New Product</h1>
+    <h1 style="color: #7159c1">New Product</h1>
 
-    <form action="{{route('admin.products.store')}}" method="post" class="p-4 mb-5 text-white" style="border: 2px solid #7159c1; border-radius: 25px ;">
+    <form action="{{route('admin.products.store')}}" method="post" class="p-4 mb-5 text-white" style="border: 2px solid #7159c1; border-radius: 25px ;" enctype="multipart/form-data">
         <div class="row d-flex justify-content-around">
             <div class="col-md-8" style="border-color: #7159c1;">
                 @csrf()
@@ -61,6 +61,11 @@
                             <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="photos">Product Photos</label>
+                    <input type="file" id="photos" name="photos[]" class="form-control" multiple>
                 </div>
 
                 <div class="form-group">
