@@ -61,8 +61,10 @@ class ProductController extends Controller
         //Verifica se foi adicionado alguma imagem
         if($request->hasFile('photos')) {
 
-                $imagens = $this->imageUpload($request);
+            $images = $this->imageUpload($request, 'image');
 
+            //Inserção das images/referencias na base
+            $product->photos()->createMany($images);
         }
 
         flash('Produto criado com sucesso!')->success();
@@ -128,11 +130,11 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index');
     }
 
-    private function imageUpload(Request $request) {
+    private function imageUpload(Request $request, $imageColumn) {
         $images = $request->file('photos');
         $uploadedImages = [];
         foreach ($images as $image) {
-            $uploadedImages[] =$image->store('products', 'public');
+            $uploadedImages[] = [$imageColumn => $image->store('products', 'public')];
         }
         return $uploadedImages;
     }
