@@ -5,41 +5,45 @@ basic project with laravel framework.
 ## Installation
 
 ```bash
-git clone git@github.com:KaliaryCisne/marketplace.git
-
-cd marketplace
-
-composer install
-
-cp .env.example .env
-
-php artisan key:generate
+    git clone git@github.com:KaliaryCisne/marketplace.git
+    
+    cd marketplace
+    
+    composer install
+    
+    cp .env.example .env
+    
+    php artisan key:generate
 ```
 
 ## Installation using Docker
 
 ```bash
-git clone git@github.com:KaliaryCisne/marketplace.git
-
-cd marketplace
-
-composer install
-
-cp .env.example .env
-
-php artisan key:generate
+    git clone git@github.com:KaliaryCisne/marketplace.git
+    
+    cd marketplace
+    
+    composer install
+    
+    cp .env.example .env
+    
+    php artisan key:generate
 ```
 
 ## Usage
-
 ```bash
-php artisan serve
+    php artisan serve
 ```
 
 ## Usage with docker
 
 ```bash
-docker-compose up -d
+    docker-compose up -d
+```
+
+## Running command inside the container 
+```bash
+    docker exec -it [container_id] [command]
 ```
 
 ## License
