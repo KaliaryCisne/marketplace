@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -51,9 +52,20 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $data = $request->all();
+
         $store = auth()->user()->store;
         $product = $store->products()->create($data);
+
         $product->categories()->sync($data['categories']);
+
+        //Verifica se foi adicionado alguma imagem
+        if($request->hasFile('photos')) {
+
+            $images = $this->imageUpload($request, 'image');
+
+            //Inserção das images/referencias na base
+            $product->photos()->createMany($images);
+        }
 
         flash('Produto criado com sucesso!')->success();
         return redirect()->route('admin.products.index');
@@ -116,5 +128,14 @@ class ProductController extends Controller
 
         flash('Produto removido com sucesso!')->success();
         return redirect()->route('admin.products.index');
+    }
+
+    private function imageUpload(Request $request, $imageColumn) {
+        $images = $request->file('photos');
+        $uploadedImages = [];
+        foreach ($images as $image) {
+            $uploadedImages[] = [$imageColumn => $image->store('products', 'public')];
+        }
+        return $uploadedImages;
     }
 }
