@@ -90,7 +90,7 @@
                 <div class="row">
                     @foreach($product->photos as $photo)
                         <div class="col-4">
-                            <img src="{{asset("storage/" . $photo->image)}}" alt="photo" class="img-fluid">
+                            <img src="{{asset('storage/' . $photo->image)}}" alt="photo" class="img-fluid">
                         </div>
                     @endforeach
                 </div>

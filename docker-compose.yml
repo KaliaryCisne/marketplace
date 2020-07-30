@@ -10,17 +10,18 @@ services:
     ports:
     - 3306:3306
     volumes:
-    - ../data/:/var/lib/mysql
+    - ./data/:/var/lib/mysql
     env_file:
-    - .env
+    - src/.env
   application:
     container_name: marketplace
     network_mode: host
     build:
-      context: .
+      context: src
       dockerfile: ./docker/Dockerfile
     ports:
     - 8000:8000
-    command: "php -S localhost:8000 public/index.php"
+#    command: "php -S localhost:8000 public/index.php"
+    command: "php artisan serve"
     volumes:
-    - ./:/var/www
+    - ./src/:/var/www
