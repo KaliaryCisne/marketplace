@@ -112,6 +112,15 @@ class ProductController extends Controller
         $product->update($data);
         $product->categories()->sync($data['categories']);
 
+        //Verifica se foi adicionado alguma imagem
+        if($request->hasFile('photos')) {
+
+            $images = $this->imageUpload($request, 'image');
+
+            //Inserção das images/referencias na base
+            $product->photos()->createMany($images);
+        }
+
         flash('Produto atualizado com sucesso!')->success();
         return redirect()->route('admin.products.index');
     }
