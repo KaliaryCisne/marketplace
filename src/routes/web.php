@@ -12,6 +12,8 @@ Route::group(['middleware' => ['auth']], function () {
         foreach(glob($basePath.'/routes/admin/*-routes.php') as $route) {
             include $route;
         }
+
+        Route::post('photos/remove', 'ProductPhotoController@removePhoto')->name('photo.remove');
     });
 });
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text-white">Editar loja</h1>
+    <h1 class="text-white">Edit</h1>
 
     <form action="{{route('admin.products.update', ['product' => $product->id])}}" method="post" class="p-4 mb-5 rounded text-white" style="border: 2px solid #7159c1; border-radius: 25px ;" enctype="multipart/form-data">
 
@@ -13,7 +13,7 @@
                 @method("PUT")
 
                 <div class="form-group">
-                    <label for="">Nome do produto</label>
+                    <label for="">Name</label>
                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{$product->name}}">
 
                     @error('name')
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Descrição</label>
+                    <label for="">Description</label>
                     <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" value="{{$product->description}}">
 
                     @error('description')
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Conteúdo</label>
+                    <label for="">Content</label>
                     <textarea name="body" id="" cols="30" rows="10" class="form-control @error('body') is-invalid @enderror">{{$product->body}}</textarea>
                     @error('body')
                     <div class="invalid-feedback">
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Preço</label>
+                    <label for="">Price</label>
                     <input type="text" name="price" class="form-control @error('price') is-invalid @enderror" value="{{$product->price}}">
 
                     @error('price')
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="photos">Product Photos</label>
+                    <label for="photos">Photos</label>
                     <input type="file" id="photos" name="photos[]" class="form-control" multiple>
                 </div>
 
@@ -84,18 +84,24 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-md btn-outline-success float-right font-weight-bold">Save</button>
                 </div>
-
-                <hr>
-
-                <div class="row">
-                    @foreach($product->photos as $photo)
-                        <div class="col-4">
-                            <img src="{{asset('storage/' . $photo->image)}}" alt="photo" class="img-fluid">
-                        </div>
-                    @endforeach
-                </div>
-
             </div>
         </div>
     </form>
+
+    <hr style="border: 2px solid #7159c1; border-radius: 25px ;">
+
+    <div class="row">
+        @foreach($product->photos as $photo)
+            <div class="col-4 text-center mb-5">
+                <img src="{{asset('storage/' . $photo->image)}}" alt="photo" class="img-fluid" style="border-radius: 25px">
+
+                <form action="{{route('admin.photo.remove')}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="photoName" value="{{$photo->image}}">
+
+                    <button type="submit" class="btn btn-md btn-danger mt-2">Remove</button>
+                </form>
+            </div>
+        @endforeach
+    </div>
 @endsection
