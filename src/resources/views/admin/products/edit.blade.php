@@ -84,26 +84,24 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-md btn-outline-success float-right font-weight-bold">Save</button>
                 </div>
-
-                <hr>
-
-                <div class="row">
-                    @foreach($product->photos as $photo)
-                        <div class="col-4 text-center">
-                            <img src="{{asset('storage/' . $photo->image)}}" alt="photo" class="img-fluid">
-
-
-                            <form action="{{route('admin.photo.remove')}}" method="POST">
-
-                                @csrf
-                                <input type="hidden" name="photoName" value="{{$photo->image}}">
-                                <button type="submit" class="btn btn-md btn-danger">Remove</button>
-                            </form>
-                        </div>
-                    @endforeach
-                </div>
-
             </div>
         </div>
     </form>
+
+    <hr style="border: 2px solid #7159c1; border-radius: 25px ;">
+
+    <div class="row">
+        @foreach($product->photos as $photo)
+            <div class="col-4 text-center mb-5">
+                <img src="{{asset('storage/' . $photo->image)}}" alt="photo" class="img-fluid" style="border-radius: 25px">
+
+                <form action="{{route('admin.photo.remove')}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="photoName" value="{{$photo->image}}">
+
+                    <button type="submit" class="btn btn-md btn-danger mt-2">Remove</button>
+                </form>
+            </div>
+        @endforeach
+    </div>
 @endsection
