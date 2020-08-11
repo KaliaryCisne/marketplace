@@ -6,10 +6,14 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Product;
+use App\Traits\UploadTrait;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    use UploadTrait;
+
     // php artisan make:request ProductRequest => Cria um formRequest
     private $product;
 
@@ -61,7 +65,7 @@ class ProductController extends Controller
         //Verifica se foi adicionado alguma imagem
         if($request->hasFile('photos')) {
 
-            $images = $this->imageUpload($request, 'image');
+            $images = $this->imageUpload($request->file('photos'), 'image');
 
             //Inserção das images/referencias na base
             $product->photos()->createMany($images);
@@ -115,7 +119,7 @@ class ProductController extends Controller
         //Verifica se foi adicionado alguma imagem
         if($request->hasFile('photos')) {
 
-            $images = $this->imageUpload($request, 'image');
+            $images = $this->imageUpload($request->file('photos'), 'image');
 
             //Inserção das images/referencias na base
             $product->photos()->createMany($images);
