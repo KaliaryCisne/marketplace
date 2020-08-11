@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <table class="table" id="my-table">
+    <table class="table" id="my-table" style="margin-top: 7rem !important;">
         <thead class="table-red">
         <tr>
             <th class="th-no-border">Name</th>
