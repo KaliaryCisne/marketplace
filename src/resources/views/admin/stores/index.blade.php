@@ -17,11 +17,11 @@
                 <td class="td-no-border">
                     <div class="row">
 
-                            <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-outline-primary mr-2">EDIT</a>
+                            <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-md btn-primary mr-2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             <form action="{{route('admin.stores.destroy', ['store' => $store->id])}}" method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <button type="submit" class="btn btn-sm btn-outline-danger">DELETE</button>
+                                <button type="submit" class="btn btn-md btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                             </form>
 
                     </div>

@@ -15,7 +15,7 @@ class StoreController extends Controller
     public function __construct()
     {
         // Verifica se o usuário já possui uma loja cadastrada
-//        $this->middleware('user.has.store')->only(['create', 'store']);
+        $this->middleware('user.has.store')->only(['create', 'store']);
     }
 
     public function index()
@@ -38,7 +38,7 @@ class StoreController extends Controller
         $user = auth()->user();
 
         if ($request->hasFile('logo' )) {
-            $data['logo'] = $this->imageUpload($request);
+            $data['logo'] = $this->imageUpload($request->file('logo'));
         }
 
         $user->store()->create($data);
