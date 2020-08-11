@@ -7,10 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Marketplace</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url(mix('assets/css/styles.css')) }}" type="text/css" >
+    <link rel="stylesheet" href="{{asset('assets/icons/css/font-awesome.min.css')}}">
 </head>
-<body class="bg-dark body-customized">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="margin-bottom: 40px; background: #7159c1;">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-5 container">
         <a class="navbar-brand" href="#">Marketplace L6</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,20 +34,20 @@
                 <div class="my-2 my-lg-0">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="event.preventDefault(); document.querySelector('form.logout').submit();">Logout</a>
+                            <span class="nav-link">{{auth()->user()->name}}</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-md" href="#" onclick="event.preventDefault(); document.querySelector('form.logout').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                             <form action="{{route('logout')}}" class="logout" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                        </li>
-                        <li class="nav-item">
-                            <span class="nav-link">{{auth()->user()->name}}</span>
                         </li>
                     </ul>
                 </div>
             @endauth
         </div>
     </nav>
-    <div class="container">
+    <div class="container mt-5">
         @include('flash::message')
         @yield('content')
     </div>

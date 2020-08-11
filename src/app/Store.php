@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Store extends Model
 {
 
-    protected $fillable = ['name', 'description', 'phone', 'mobile_phone', 'slug'];
+    protected $fillable = ['name', 'description', 'phone', 'mobile_phone', 'slug', 'logo'];
 
     /**
      * Retorna o usuário ao qual pertence a loja
