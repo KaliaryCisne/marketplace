@@ -2,12 +2,12 @@
 
 @section('content')
 
-    <h1>Criar loja</h1>
+    <h1>Add</h1>
 
-    <form action="{{route('admin.stores.store')}}" method="post">
+    <form action="{{route('admin.stores.store')}}" method="post" enctype="multipart/form-data">
         @csrf()
         <div class="form-group">
-            <label for="">Nome da loja</label>
+            <label for="">Name</label>
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}">
             @error('name')
                 <div class="invalid-feedback">
@@ -17,7 +17,7 @@
         </div>
 
         <div class="form-group">
-            <label for="">Descrição</label>
+            <label for="">Description</label>
             <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" value="{{old('description')}}">
             @error('description')
             <div class="invalid-feedback">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-            <label for="">Telefone</label>
+            <label for="">Phone</label>
             <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" value="{{old('phone')}}">
             @error('phone')
             <div class="invalid-feedback">
@@ -37,7 +37,7 @@
         </div>
 
         <div class="form-group">
-            <label for="">Celular/Whatsapp</label>
+            <label for="">cell phone/Whatsapp</label>
             <input type="text" name="mobile_phone" class="form-control @error('mobile_phone') is-invalid @enderror" value="{{old('mobile_phone')}}">
             @error('mobile_phone')
             <div class="invalid-feedback">
@@ -47,12 +47,17 @@
         </div>
 
         <div class="form-group">
+            <label for="logo_id">Logo</label>
+            <input type="file" id="logo_id" name="logo" class="form-control">
+        </div>
+
+        <div class="form-group">
             <label for="">Slug</label>
             <input type="text" name="slug" class="form-control">
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-success">Salvar</button>
+            <button type="submit" class="btn btn-lg btn-success">Add</button>
         </div>
 
     </form>

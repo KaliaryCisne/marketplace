@@ -2,29 +2,26 @@
 
 @section('content')
 
-    <table class="table table-dark">
-        <thead style="background: #7159c1;">
+    <table class="table" id="my-table">
+        <thead class="table-red">
         <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Total products</th>
-            <th>Settings</th>
-
+            <th class="th-no-border">Name</th>
+            <th class="th-no-border">Total products</th>
+            <th class="th-no-border">Settings</th>
         </tr>
         </thead>
         <tbody>
             <tr>
-                <td>{{$store->id}} </td>
-                <td>{{$store->name}}</td>
-                <td>{{$store->products->count()}}</td>
-                <td>
+                <td class="td-no-border">{{$store->name}}</td>
+                <td class="td-no-border">{{$store->products->count()}}</td>
+                <td class="td-no-border">
                     <div class="row">
 
-                            <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-sm btn-outline-primary mr-2">EDIT</a>
+                            <a href="{{route('admin.stores.edit', ['store' => $store->id])}}" class="btn btn-md btn-primary mr-2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             <form action="{{route('admin.stores.destroy', ['store' => $store->id])}}" method="POST">
                                 @csrf
                                 @method("DELETE")
-                                <button type="submit" class="btn btn-sm btn-outline-danger">DELETE</button>
+                                <button type="submit" class="btn btn-md btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                             </form>
 
                     </div>
