@@ -48,7 +48,12 @@
 
         <div class="form-group">
             <label for="logo_id">Logo</label>
-            <input type="file" id="logo_id" name="logo" class="form-control">
+            <input type="file" id="logo_id" name="logo" class="form-control @error('logo') is-invalid @enderror">
+            @error('logo')
+            <div class="invalid-feedback">
+                {{$message}}
+            </div>
+            @enderror
         </div>
 
         <div class="form-group">
