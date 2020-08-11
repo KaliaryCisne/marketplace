@@ -1,0 +1,35 @@
+body {
+    color: #7159c1;
+    font-family: Roboto, sans-serif;
+    background-color: #1b1a1f;
+}
+
+.navbar {
+    background: #1b1a1f;
+}
+
+#my-table {
+    position: relative;
+    padding: 2rem 3.5rem;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+}
+
+#my-table thead, #my-table tbody {
+    text-align: center;
+}
+
+#my-table .td-no-border, #my-table .th-no-border{
+    border: 0px;
+}
+
+table tbody {
+    color: white;
+    border: 0px;
+}
+
+.table-red {
+    border: 1px solid #f51d46;
+    color: white;
+}
+

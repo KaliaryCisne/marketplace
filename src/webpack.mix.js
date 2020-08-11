@@ -15,7 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 
 mix.styles([
-    'resources/views/layouts/assets/css/style.css'
+    'resources/views/layouts/assets/css/app.css',
 ], 'public/assets/css/styles.css').version();
 
 

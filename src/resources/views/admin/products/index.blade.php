@@ -11,25 +11,23 @@
         </div>
     </div>
 
-    <table class="table table-dark">
-        <thead style="background: #7159c1;">
+    <table class="table" id="my-table">
+        <thead class="table-red">
         <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Store</th>
-            <th>Settings</th>
+            <th class="th-no-border">Name</th>
+            <th class="th-no-border">Price</th>
+            <th class="th-no-border">Store</th>
+            <th class="th-no-border">Settings</th>
 
         </tr>
         </thead>
         <tbody>
         @foreach($products as $product)
             <tr>
-                <td>{{$product->id}} </td>
-                <td>{{$product->name}}</td>
-                <td>R$ {{number_format($product->price, 2, ',', '.')}}</td>
-                <td>{{$product->store->name}}</td>
-                <td>
+                <td class="td-no-border">{{$product->name}}</td>
+                <td class="td-no-border">R$ {{number_format($product->price, 2, ',', '.')}}</td>
+                <td class="td-no-border">{{$product->store->name}}</td>
+                <td class="td-no-border">
                     <div class="row">
                         <a href="{{route('admin.products.edit', ['product' => $product->id])}}" class="btn btn-sm btn-outline-primary mr-2" >EDIT</a>
 
