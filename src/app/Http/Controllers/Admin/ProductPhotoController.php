@@ -11,8 +11,7 @@ class ProductPhotoController extends Controller
 {
     public function removePhoto(Request $request)
     {
-//        dd($request);
-//        die();
+
         $photo_name = $request->get('photoName');
 
         //Remove photo from disk
