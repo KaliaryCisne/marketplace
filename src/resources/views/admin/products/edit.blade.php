@@ -82,11 +82,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Slug</label>
-                    <input type="text" name="slug" class="form-control" value="{{$product->slug}}">
-                </div>
-
-                <div class="form-group">
                     <button type="submit" class="btn btn-md btn-outline-success float-right font-weight-bold">Save</button>
                 </div>
             </div>
