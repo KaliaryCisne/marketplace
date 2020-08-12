@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -23,6 +22,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+//        return view('admin.stores.index', ['store' => '']);
+        $store = auth()->user()->store;
+        return view('admin.stores.index', compact('store'));
     }
+
 }
