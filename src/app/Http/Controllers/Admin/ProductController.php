@@ -6,8 +6,10 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Product;
+use App\ProductPhoto;
 use App\Traits\UploadTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -137,7 +139,22 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        //todo: Procurar melhorar esse processo
+
         $product = $this->product->find($id);
+        $photos = $product->photos()->get();
+
+        //Remove as imagens do disco
+        foreach ($photos as $photo) {
+
+            if(Storage::disk('public')->exists($photo->image)) {
+                Storage::disk('public')->delete($photo->image);
+            }
+        }
+
+        $product->categories()->detach(); // Remove o relacionamento
+        $product->photos()->delete(); // Remove as imagens do banco
+
         $product->delete();
 
         flash('Produto removido com sucesso!')->success();
