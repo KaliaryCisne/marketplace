@@ -22,9 +22,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        return view('admin.stores.index', ['store' => '']);
-        $store = auth()->user()->store;
-        return view('admin.stores.index', compact('store'));
+        return view('home');
+
+//        $store = auth()->user()->store;
+//        return view('admin.stores.index', compact('store'));
     }
 
 }

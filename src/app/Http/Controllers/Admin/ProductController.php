@@ -16,6 +16,8 @@ class ProductController extends Controller
 
     use UploadTrait;
 
+    //todo: Criar middleware para verificar se o existe alguma loga na hora de criar um produto
+
     // php artisan make:request ProductRequest => Cria um formRequest
     private $product;
 
@@ -33,6 +35,10 @@ class ProductController extends Controller
     public function index()
     {
         $userStore = auth()->user()->store;
+        if(is_null($userStore)) {
+            $products = null;
+            return view('admin.products.index', compact('products'));
+        }
         $products = $userStore->products()->paginate(10);
         return view('admin.products.index', compact('products'));
     }
