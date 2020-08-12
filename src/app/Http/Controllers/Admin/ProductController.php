@@ -16,6 +16,8 @@ class ProductController extends Controller
 
     use UploadTrait;
 
+    //todo: Criar middleware para verificar se o existe alguma loga na hora de criar um produto
+
     // php artisan make:request ProductRequest => Cria um formRequest
     private $product;
 
@@ -33,6 +35,10 @@ class ProductController extends Controller
     public function index()
     {
         $userStore = auth()->user()->store;
+        if(is_null($userStore)) {
+            $products = null;
+            return view('admin.products.index', compact('products'));
+        }
         $products = $userStore->products()->paginate(10);
         return view('admin.products.index', compact('products'));
     }
@@ -59,10 +65,14 @@ class ProductController extends Controller
     {
         $data = $request->all();
 
+        $categories = $request->get('categories', null);
+
         $store = auth()->user()->store;
         $product = $store->products()->create($data);
 
-        $product->categories()->sync($data['categories']);
+        if(!is_null($categories)) {
+            $product->categories()->sync($categories);
+        }
 
         //Verifica se foi adicionado alguma imagem
         if($request->hasFile('photos')) {
@@ -113,10 +123,14 @@ class ProductController extends Controller
     public function update(ProductRequest $request, $id)
     {
         $data = $request->all();
+        $categories = $request->get('categories', null);
 
         $product = $this->product->find($id);
         $product->update($data);
-        $product->categories()->sync($data['categories']);
+
+        if(!is_null($categories)) {
+            $product->categories()->sync($categories);
+        }
 
         //Verifica se foi adicionado alguma imagem
         if($request->hasFile('photos')) {
