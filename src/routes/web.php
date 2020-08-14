@@ -4,6 +4,7 @@ use App\User;
 use Illuminate\Support\Facades\App;
 
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::group(['middleware' => ['auth']], function () {
 
     //Inclui os arquivos de rotas administrativas

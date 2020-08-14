@@ -5,15 +5,6 @@ namespace App\Http\Controllers;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth'); // Verifica se o usuário está logado
-    }
 
     /**
      * Show the application dashboard.
@@ -22,10 +13,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('welcome');
 
-//        $store = auth()->user()->store;
-//        return view('admin.stores.index', compact('store'));
     }
 
 }
