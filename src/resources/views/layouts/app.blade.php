@@ -22,7 +22,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             @auth
+
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item @if(request()->is('/')) active @endif">
+                        <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
+                    </li>
                     <li class="nav-item @if(request()->is('admin/stores*')) active @endif">
                         <a class="nav-link" href="{{route('admin.stores.index')}}">Stores <span class="sr-only">(current)</span></a>
                     </li>
