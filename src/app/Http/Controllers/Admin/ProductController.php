@@ -62,6 +62,9 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+
+        //todo: verificar digitação do preço
+
         $data = $request->all();
 
         $categories = $request->get('categories', null);
