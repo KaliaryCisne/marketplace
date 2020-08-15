@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <h1 style="color: #7159c1">New Product</h1>
+    <h1 class="text-white">New Product</h1>
 
-    <form action="{{route('admin.products.store')}}" method="post" class="p-4 mb-5 text-white" style="border: 2px solid #7159c1; border-radius: 25px ;" enctype="multipart/form-data">
+    <form action="{{route('admin.products.store')}}" method="post" class="p-4 mb-5 text-white form-customized" enctype="multipart/form-data">
         <div class="row d-flex justify-content-around">
-            <div class="col-md-8" style="border-color: #7159c1;">
+            <div class="col-md-8">
                 @csrf()
                 <div class="form-group">
                     <label for="">Name</label>

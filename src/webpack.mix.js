@@ -16,6 +16,10 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.styles([
     'resources/views/layouts/assets/css/app.css',
+    'resources/views/layouts/assets/css/buttons.css',
+    'resources/views/layouts/assets/css/table.css',
+    'resources/views/layouts/assets/css/single.css',
+    'resources/views/layouts/assets/css/form.css',
 ], 'public/assets/css/styles.css').version();
 
 
