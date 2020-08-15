@@ -16,6 +16,7 @@
 .form-textarea-customized::placeholder {
     color: #eee;
     font-size: 14px;
+    text-transform: capitalize;
 }
 
 .form-textarea-customized:focus {
@@ -46,6 +47,7 @@
 .form-imput-customized::placeholder {
     color: #eee;
     font-size: 14px;
+    text-transform: capitalize;
 }
 
 .form-imput-customized:focus {
