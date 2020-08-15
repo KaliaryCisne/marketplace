@@ -77,7 +77,8 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-md btn-outline-success float-right font-weight-bold">Save</button>
+                <button type="submit" class="btn btn-create float-right" title="save"><i class="fa fa-save" aria-hidden="true"></i></button>
+
             </div>
 
         </form>
