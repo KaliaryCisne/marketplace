@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark mb-5 container">
 
-        <a class="navbar-brand" href="#">Marketplace L6</a>
+        <a class="navbar-brand" href="#" id="logo_marketplace">Marketplace L6</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,11 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             @auth
+
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item @if(request()->is('/')) active @endif">
+                        <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
+                    </li>
                     <li class="nav-item @if(request()->is('admin/stores*')) active @endif">
                         <a class="nav-link" href="{{route('admin.stores.index')}}">Stores <span class="sr-only">(current)</span></a>
                     </li>

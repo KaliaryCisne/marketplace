@@ -1,0 +1,33 @@
+#my-table thead {
+    font-size: 20px;
+}
+
+/*Estiliza as tabelas*/
+#my-table thead, #my-table tbody {
+    text-align: center;
+}
+
+.table {
+    background: #232228;
+    position: relative;
+    padding: 2rem 3.5rem;
+    border-radius: 4px;
+    /*box-shadow: 0 0 30px rgba(0, 0, 0, .2);*/
+    box-shadow: 10px 5px 5px black;
+    overflow: hidden;
+}
+
+/*Retira as bordas das tabelas*/
+#my-table .td-no-border, #my-table .th-no-border {
+    border: 0px;
+}
+
+table tbody {
+    color: white;
+    border: 0px;
+}
+
+.table-red {
+    background: #f51d46;
+    color: white;
+}
