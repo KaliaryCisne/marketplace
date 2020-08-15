@@ -22,7 +22,8 @@ body {
     position: relative;
     padding: 2rem 3.5rem;
     border-radius: 4px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    /*box-shadow: 0 0 30px rgba(0, 0, 0, .2);*/
+    box-shadow: 10px 5px 5px black;
     overflow: hidden;
 }
 
@@ -68,11 +69,12 @@ table tbody {
     align-items: center;
     cursor: pointer;
     transition: all ease-in-out 300ms;
+    box-shadow: 10px 5px 5px black;
 
-    box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
-    -moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
-    -webkit-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
-    -o-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
+/*    box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+/*    -moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+/*    -webkit-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+/*    -o-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
 }
 .btn-create:hover {
         color: white;
@@ -85,11 +87,12 @@ table tbody {
     font-weight: bold;
     background: #f51d46;
     border-radius: 25px;
+    box-shadow: 10px 5px 5px black;
 
-    box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
-    -moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
-    -webkit-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
-    -o-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
+    /*box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-webkit-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-o-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
 }
 
 .btn-delete:hover {
@@ -103,15 +106,20 @@ table tbody {
     font-weight: bold;
     background: #00ddba;
     border-radius: 25px;
+    box-shadow: 10px 5px 5px black;
 
-    box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
-    -moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
-    -webkit-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
-    -o-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);
+    /*box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-webkit-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-o-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
 }
 
 .btn-edit:hover {
     color: white;
     box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
     transform: translate(0px, -10px) scale(1.2);
+}
+
+.single-infos, .single-body {
+    color: white;
 }

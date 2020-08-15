@@ -4,6 +4,7 @@ use App\User;
 use Illuminate\Support\Facades\App;
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/product/{slug}', 'HomeController@single')->name('product.single');
 
 Route::group(['middleware' => ['auth']], function () {
 
