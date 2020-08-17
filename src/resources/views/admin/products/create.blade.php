@@ -5,7 +5,12 @@
     <h1 class="text-white text-center form-title-customized">New Product</h1>
 
     <div class="row form-row-customized justify-content-center">
-        <form action="{{route('admin.products.store')}}" method="post" class="mb-5 text-white form-customized col-md-8" enctype="multipart/form-data">
+        <form
+            action="{{route('admin.products.store')}}"
+            method="post"
+            class="mb-5 text-white form-customized col-md-8"
+            enctype="multipart/form-data"
+        >
 
             @csrf()
             <div class="form-group">
@@ -78,6 +83,7 @@
 
             <div class="form-group">
                 <button type="submit" class="btn btn-create float-right" title="save"><i class="fa fa-save" aria-hidden="true"></i></button>
+
             </div>
 
         </form>

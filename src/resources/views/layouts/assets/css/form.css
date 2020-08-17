@@ -9,7 +9,7 @@
     width: 100%;
     border-radius: 4px;
     border: 2px solid #c1c1c1;
-    padding: 0 0 .5rem 0;
+    padding: 0 0 .5rem .5em;
     transition: all .25s;
 }
 
@@ -17,11 +17,13 @@
     color: #eee;
     font-size: 14px;
     text-transform: capitalize;
+    padding: 0 0 .5rem .5em;
 }
 
 .form-textarea-customized:focus {
     border-color: #f51d46;
     text-transform: uppercase;
+    padding: 0 0 .5rem .5em;
 }
 
 
@@ -54,4 +56,10 @@
 .form-imput-customized:focus {
     border-color: #f51d46;
     text-transform: uppercase;
+}
+
+.logo-stores {
+    width: 100px;
+    max-width: 100px;
+    border-radius: 50px;
 }
