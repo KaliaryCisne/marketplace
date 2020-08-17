@@ -2,48 +2,64 @@
 
 @section('content')
 
-    <h1>Edit</h1>
+    <h1 class="text-white text-center form-title-customized">Edit</h1>
 
-    <form action="{{route('admin.stores.update', ['store' => $store->id])}}" method="post" enctype="multipart/form-data">
-        @csrf()
-        @method("PUT")
-        <div class="form-group">
-            <label for="">Name</label>
-            <input type="text" name="name" class="form-control" value="{{$store->name}}">
-        </div>
+    <div class="row form-row-customized justify-content-center">
+        <form
+            action="{{route('admin.stores.update', ['store' => $store->id])}}"
+            class="mb-5 text-white form-customized col-md-8"
+            method="post"
+            enctype="multipart/form-data"
+        >
+            @csrf()
+            @method("PUT")
 
-        <div class="form-group">
-            <label for="">Description</label>
-            <input type="text" name="description" class="form-control" value="{{$store->description}}">
-        </div>
+            <div class="form-group">
+                <input type="text" placeholder="name" name="name" class="form-imput-customized" value="{{$store->name}}" autocomplete="off">
+            </div>
 
-        <div class="form-group">
-            <label for="">Phone</label>
-            <input type="text" name="phone" class="form-control" value="{{$store->phone}}">
-        </div>
+            <div class="form-group">
+                <input type="text" placeholder="description" name="description" class="form-imput-customized" value="{{$store->description}}" autocomplete="off">
+            </div>
 
-        <div class="form-group">
-            <label for="">Cell phone/Whatsapp</label>
-            <input type="text" name="mobile_phone" class="form-control" value="{{$store->mobile_phone}}">
-        </div>
+            <div class="form-group">
+                <input type="text" placeholder="phone" name="phone" class="form-imput-customized" value="{{$store->phone}}" autocomplete="off">
+            </div>
 
-        <div class="form-group">
-            <p>
-                <img src="{{asset('storage/' . $store->logo)}}" alt="">
-            </p>
-            <label for="logo_id">Logo</label>
-            <input type="file" id="logo_id" name="logo" class="form-control @error('logo.*') is-invalid @enderror">
+            <div class="form-group">
+                <input type="text" placeholder="Cell phone/Whatsapp" name="mobile_phone" class="form-imput-customized" value="{{$store->mobile_phone}}" autocomplete="off">
+            </div>
 
-            @error('logo.*')
-               <div class="invalid-feedback">
-                   {{$message}}
-               </div>
-            @enderror
-        </div>
+            <div class="input-group mt-5 mb-5">
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-success">Save</button>
-        </div>
+                <p>
+                    <img class="logo-stores" src="{{asset('storage/' . $store->logo)}}" alt="">
+                </p>
 
-    </form>
+
+
+                <div class="custom-file" style="width: 100%">
+                    <input
+                        type="file"
+                        class="custom-file-input @error('logo.*') is-invalid @enderror"
+                        id="logo_id"
+                        name="logo"
+                    >
+                    <label class="custom-file-label" for="photos">Logo</label>
+                </div>
+
+                @error('logo.*')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-edit float-right" title="update"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+            </div>
+
+        </form>
+    </div>
+
 @endsection
