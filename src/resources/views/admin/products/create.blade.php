@@ -78,7 +78,6 @@
 
             <div class="form-group">
                 <button type="submit" class="btn btn-create float-right" title="save"><i class="fa fa-save" aria-hidden="true"></i></button>
-
             </div>
 
         </form>

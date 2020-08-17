@@ -156,6 +156,7 @@ table tbody {
     border-radius: 4px;
     box-shadow: 10px 5px 5px black;
     padding: 3rem;
+    /*background: white;*/
 }
 
 .form-imput-customized {
@@ -165,7 +166,7 @@ table tbody {
     background: none;
     width: 100%;
     border-bottom: 2px solid #c1c1c1;
-    padding: 0 0 .5rem 0;
+    padding: 0 0 .5rem .5em;
     transition: all .25s;
 
 }
