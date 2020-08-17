@@ -14,7 +14,13 @@ const mix = require('laravel-mix');
 // mix.js('resources/js/app.js', 'public/js')
 //     .sass('resources/sass/app.scss', 'public/css');
 
-mix.js(['resources/views/layouts/assets/js/form.js'], 'public/js');
+mix.js([
+    'node_modules/inputmask/dist/inputmask.js',
+], 'public/js')
+
+mix.js([
+    'resources/views/layouts/assets/js/form.js',
+], 'public/js');
 
 mix.styles([
     'resources/views/layouts/assets/css/app.css',

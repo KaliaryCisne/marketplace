@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,12 +93,6 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// $('#photos').on('change',function(){
-//     //get the file name
-//     var fileName = $(this).val();
-//     //replace the "Choose a file" label
-//     $(this).next('.custom-file-label').html(fileName);
-// })
 $('.custom-file input').change(function (e) {
   var files = [];
 
@@ -108,10 +102,12 @@ $('.custom-file input').change(function (e) {
 
   $(this).next('.custom-file-label').html(files.join(', '));
 });
+Inputmask("(99) 9 9999-9999").mask("#celular");
+Inputmask("(99) 9 9999-9999").mask("#whatsapp");
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!*********************************************************!*\
   !*** multi ./resources/views/layouts/assets/js/form.js ***!
   \*********************************************************/

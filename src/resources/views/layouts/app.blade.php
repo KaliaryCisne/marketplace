@@ -71,6 +71,7 @@
         @include('flash::message')
         @yield('content')
 
+        <script src="{{asset('js/inputmask.js')}}"></script>
         <script src="{{asset('js/form.js')}}"></script>
     </div>
 </body>

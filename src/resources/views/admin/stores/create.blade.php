@@ -28,7 +28,7 @@
             </div>
 
             <div class="form-group">
-                <input type="text" placeholder="Phone" name="phone" class="form-imput-customized @error('phone') is-invalid @enderror" value="{{old('phone')}}" autocomplete="off">
+                <input type="text" id="celular" placeholder="Phone" name="phone" class="form-imput-customized @error('phone') is-invalid @enderror" value="{{old('phone')}}" autocomplete="off">
                 @error('phone')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -37,7 +37,7 @@
             </div>
 
             <div class="form-group mb-5">
-                <input type="text" placeholder="cell phone/Whatsapp" name="mobile_phone" class="form-imput-customized @error('mobile_phone') is-invalid @enderror" value="{{old('mobile_phone')}}" autocomplete="off">
+                <input type="text" id="whatsapp" placeholder="cell phone/Whatsapp" name="mobile_phone" class="form-imput-customized @error('mobile_phone') is-invalid @enderror" value="{{old('mobile_phone')}}" autocomplete="off">
                 @error('mobile_phone')
                 <div class="invalid-feedback">
                     {{$message}}

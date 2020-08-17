@@ -23,11 +23,16 @@
             </div>
 
             <div class="form-group">
-                <input type="text" placeholder="phone" name="phone" class="form-imput-customized" value="{{$store->phone}}" autocomplete="off">
+                <input type="text" id="celular" placeholder="phone" name="phone" class="form-imput-customized @error('phone') is-invalid @enderror" value="{{$store->phone}}" autocomplete="off">
+                @error('phone')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
 
             <div class="form-group">
-                <input type="text" placeholder="Cell phone/Whatsapp" name="mobile_phone" class="form-imput-customized" value="{{$store->mobile_phone}}" autocomplete="off">
+                <input type="text" id="whatsapp" placeholder="Cell phone/Whatsapp" name="mobile_phone" class="form-imput-customized" value="{{$store->mobile_phone}}" autocomplete="off">
             </div>
 
             <div class="input-group mt-5 mb-5">
@@ -60,6 +65,7 @@
             </div>
 
         </form>
+
     </div>
 
 @endsection
