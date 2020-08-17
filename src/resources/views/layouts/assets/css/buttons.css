@@ -1,0 +1,68 @@
+/*Alinha os botoes das opções no centro*/
+.btn-options {
+    justify-content: center;
+}
+
+.btn-create {
+    color: white;
+    font-weight: bold;
+    background: #0dc379;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+    box-shadow: 10px 5px 5px black;
+
+    /*    box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*    -moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*    -webkit-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*    -o-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+}
+
+.btn-create:hover {
+    color: white;
+    box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
+    transform: translate(0px, -10px) scale(1.2);
+}
+
+.btn-delete {
+    color: white;
+    font-weight: bold;
+    background: #f51d46;
+    border-radius: 25px;
+    box-shadow: 10px 5px 5px black;
+
+    /*box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-webkit-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-o-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+}
+
+.btn-delete:hover {
+    color: white;
+    box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
+    transform: translate(0px, -10px) scale(1.2);
+}
+
+.btn-edit {
+    color: white;
+    font-weight: bold;
+    background: #00ddba;
+    border-radius: 25px;
+    box-shadow: 10px 5px 5px black;
+
+    /*box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-webkit-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+    /*-o-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
+}
+
+.btn-edit:hover {
+    color: white;
+    box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
+    transform: translate(0px, -10px) scale(1.2);
+}
