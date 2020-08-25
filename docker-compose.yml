@@ -10,14 +10,12 @@ services:
     ports:
     - 3306:3306
     volumes:
-    - ./data/:/var/lib/mysql
-    env_file:
-    - src/.env
+    - ./../data-marketplace/:/var/lib/mysql
   application:
     container_name: marketplace
     network_mode: host
     build:
-      context: src
+      context: .
       dockerfile: ./docker/Dockerfile
     ports:
     - 8000:8000
