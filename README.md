@@ -9,9 +9,11 @@ basic project with laravel framework.
     
     cd marketplace
     
+    cd src
+    
     composer install
     
-    cp .env.example .env
+    cp .env.example src/.env
     
     php artisan key:generate
 ```
@@ -22,12 +24,6 @@ basic project with laravel framework.
     git clone git@github.com:KaliaryCisne/marketplace.git
     
     cd marketplace
-    
-    composer install
-    
-    cp .env.example .env
-    
-    php artisan key:generate
 ```
 
 ## Usage
