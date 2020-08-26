@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN mkdir -p /var/www
-#ADD . /var/www
+COPY ./src /var/www
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y software-properties-common && \
@@ -60,15 +60,12 @@ COPY ./docker/locale.gen /etc/locale.gen
 
 COPY ./docker/xdebug.ini /etc/php/7.4/cli/conf.d/20-xdebug.ini
 
-#RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - \
-#    apt-get install -y nodejs \
-#    apt-get update
-
+COPY ./src/.env.example /var/www/.env
 
 WORKDIR /var/www
 
-#RUN npm install \
-#    npm run production
 
-#CMD php artisan serve
+
+
+
 
