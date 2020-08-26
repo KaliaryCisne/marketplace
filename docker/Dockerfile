@@ -64,9 +64,8 @@ COPY ./src/.env.example /var/www/.env
 
 WORKDIR /var/www
 
-RUN composer install
 
-RUN php artisan key:generate
+
 
 
 

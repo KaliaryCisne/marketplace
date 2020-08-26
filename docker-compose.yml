@@ -1,8 +1,8 @@
 version: '3'
 services:
   mysql:
-    depends_on:
-      - application
+    env_file:
+      - ./docker/.env_mysql
     network_mode: host
     image: mysql:5.7
     container_name: db_marketplace
@@ -12,6 +12,8 @@ services:
     volumes:
     - ./../data-marketplace/:/var/lib/mysql
   application:
+    depends_on:
+      - mysql
     container_name: marketplace
     network_mode: host
     build:
@@ -19,7 +21,11 @@ services:
       dockerfile: ./docker/Dockerfile
     ports:
     - 8000:8000
-#    command: "php -S localhost:8000 public/index.php"
-    command: "php artisan serve"
     volumes:
     - ./src/:/var/www
+    command: "bash -c 'composer install;
+                       cp /var/www/.env.example /var/www/.env;
+                       php artisan key:generate;
+                       php artisan migrate;
+                       php artisan serve;
+                     '"
