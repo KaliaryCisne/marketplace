@@ -13,58 +13,60 @@
     <link rel="stylesheet" href="{{asset('assets/icons/css/font-awesome.min.css')}}">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark mb-5 container">
+    <div class="container-fluid main-container">
+        <nav class="navbar navbar-expand-lg navbar-dark mb-5 container">
 
-    <a class="navbar-brand" href="{{route('home')}}" id="logo_marketplace">Marketplace L6</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <a class="navbar-brand" href="{{route('home')}}" id="logo_marketplace">Marketplace L6</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item @if(request()->is('/')) active @endif">
-                <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-
-        @auth
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item @if(request()->is('admin/stores*')) active @endif">
-                    <a class="nav-link" href="{{route('admin.stores.index')}}">Stores <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item @if(request()->is('admin/products*')) active @endif">
-                    <a class="nav-link" href="{{route('admin.products.index')}}">Products</a>
-                </li>
-                <li class="nav-item @if(request()->is('admin/categories*')) active @endif">
-                    <a class="nav-link" href="{{route('admin.categories.index')}}">Categories</a>
-                </li>
-            </ul>
-
-            <div class="my-2 my-lg-0">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <span class="nav-link">{{auth()->user()->name}}</span>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="event.preventDefault();
-                                                                  document.querySelector('form.logout').submit(); "><i class="fa fa-sign-out" aria-hidden="true"></i></a>
-
-                        <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
-                            @csrf
-                        </form>
+                    <li class="nav-item @if(request()->is('/')) active @endif">
+                        <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
+
+                @auth
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item @if(request()->is('admin/stores*')) active @endif">
+                            <a class="nav-link" href="{{route('admin.stores.index')}}">Stores <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item @if(request()->is('admin/products*')) active @endif">
+                            <a class="nav-link" href="{{route('admin.products.index')}}">Products</a>
+                        </li>
+                        <li class="nav-item @if(request()->is('admin/categories*')) active @endif">
+                            <a class="nav-link" href="{{route('admin.categories.index')}}">Categories</a>
+                        </li>
+                    </ul>
+
+                    <div class="my-2 my-lg-0">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <span class="nav-link">{{auth()->user()->name}}</span>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="event.preventDefault();
+                                                                  document.querySelector('form.logout').submit(); "><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+
+                                <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                @endauth
+
             </div>
-        @endauth
+        </nav>
 
+        <div class="container mt-5">
+            @include('flash::message')
+            @yield('content')
+        </div>
     </div>
-</nav>
-
-<div class="container mt-5">
-    @include('flash::message')
-    @yield('content')
-</div>
 </body>
 </html>

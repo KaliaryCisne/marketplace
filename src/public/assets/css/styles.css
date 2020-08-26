@@ -1,9 +1,19 @@
 body {
     /*color: #7159c1*/
     font-family: Roboto, sans-serif;
-    background-color: #1b1a1f;
+    /*background-color: #1b1a1f;*/
+    background-color: #f51d46;
     font-size: 16px;
     text-transform: capitalize;
+    padding: 0 10%;
+}
+
+.main-container {
+    background-color: #1b1a1f;
+    min-height: 100vh;
+    height: 100%;
+    padding-bottom: 5rem;
+    margin-bottom: 0;
 }
 
 #logo_marketplace {
