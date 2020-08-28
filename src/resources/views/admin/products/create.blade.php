@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <h1 class="text-white text-center form-title-customized">New Product</h1>
+    <h1 class="text-center form-title-customized">New Product</h1>
 
     <div class="row form-row-customized justify-content-center">
         <form
             action="{{route('admin.products.store')}}"
             method="post"
-            class="mb-5 text-white form-customized col-md-8"
+            class="mb-5 form-customized col-md-8"
             enctype="multipart/form-data"
         >
 
@@ -44,9 +44,8 @@
                 @enderror
             </div>
 
+            <input type="text" placeholder="R$ 00,00" name="price" id="price" class="form-imput-customized @error('price') is-invalid @enderror" value="{{old('price')}}" autocomplete="off">
             <div class="form-group">
-                <input type="text" placeholder="Price" name="price" class="form-imput-customized @error('price') is-invalid @enderror" value="{{old('price')}}" autocomplete="off">
-
                 @error('price')
                 <div class="invalid-feedback">
                     {{$message}}

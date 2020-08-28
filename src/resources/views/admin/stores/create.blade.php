@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text-white text-center form-title-customized">Register</h1>
+    <h1 class="text-center form-title-customized">Register</h1>
 
     <div class="row form-row-customized justify-content-center">
         <form action="{{route('admin.stores.store')}}" class="mb-5 text-white form-customized col-md-8" method="post" enctype="multipart/form-data">
@@ -47,8 +47,14 @@
 
             <div class="input-group mb-5">
                 <div class="custom-file">
-                    <label class="custom-file-label" for="logo_id">Choose a file</label>
-                    <input type="file" class="custom-file-input @error('logo.*') is-invalid @enderror" id="logo_id" name="logo" multiple>
+                    <input
+                        type="file"
+                        class="custom-file-input @error('logo.*') is-invalid @enderror"
+                        id="logo_id"
+                        name="logo"
+                        multiple
+                    >
+                    <label class="custom-file-label" for="logo_id">Logo</label>
                 </div>
                 @error('logo.*')
                 <div class="invalid-feedback">
