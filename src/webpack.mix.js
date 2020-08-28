@@ -28,6 +28,7 @@ mix.styles([
     'resources/views/layouts/assets/css/table.css',
     'resources/views/layouts/assets/css/single.css',
     'resources/views/layouts/assets/css/form.css',
+    'resources/views/layouts/assets/css/card.css',
 ], 'public/assets/css/styles.css').version();
 
 

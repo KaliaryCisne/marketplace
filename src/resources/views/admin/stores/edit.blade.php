@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text-white text-center form-title-customized">Edit</h1>
+    <h1 class="text-center form-title-customized">Edit</h1>
 
     <div class="row form-row-customized justify-content-center">
         <form
@@ -40,8 +40,6 @@
                 <p>
                     <img class="logo-stores" src="{{asset('storage/' . $store->logo)}}" alt="">
                 </p>
-
-
 
                 <div class="custom-file" style="width: 100%">
                     <input

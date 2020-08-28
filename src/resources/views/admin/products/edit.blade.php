@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <h1 class="text-white text-center form-title-customized">Edit</h1>
+    <h1 class="text-center form-title-customized">Edit</h1>
 
     <div class="row form-row-customized justify-content-center">
         <form
             action="{{route('admin.products.update', ['product' => $product->id])}}"
             method="post"
-            class="mb-5 text-white form-customized col-md-8"
+            class="mb-5 form-customized col-md-8"
             enctype="multipart/form-data"
         >
 
@@ -95,7 +95,7 @@
         </form>
     </div>
 
-    <hr style="border: 2px solid #f51d46; border-radius: 25px ;">
+    <hr style="border: 1px solid #ccc; border-radius: 25px ;">
 
     <div class="row">
         @foreach($product->photos as $photo)

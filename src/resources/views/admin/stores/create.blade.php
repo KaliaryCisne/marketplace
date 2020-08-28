@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text-white text-center form-title-customized">Register</h1>
+    <h1 class="text-center form-title-customized">Register</h1>
 
     <div class="row form-row-customized justify-content-center">
         <form action="{{route('admin.stores.store')}}" class="mb-5 text-white form-customized col-md-8" method="post" enctype="multipart/form-data">
