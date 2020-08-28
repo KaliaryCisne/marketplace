@@ -48,7 +48,7 @@
                         id="logo_id"
                         name="logo"
                     >
-                    <label class="custom-file-label" for="photos">Logo</label>
+                    <label class="custom-file-label" for="logo_id">Logo</label>
                 </div>
 
                 @error('logo.*')

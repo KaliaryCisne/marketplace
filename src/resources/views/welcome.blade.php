@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="row mt-2 mb-2">
+    <div class="row row-cards mt-2 mb-2">
         @foreach($products as $key => $product)
 
             <div class="col-md-3">

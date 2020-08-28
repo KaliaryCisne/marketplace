@@ -16,7 +16,7 @@ class StoreController extends Controller
     public function __construct()
     {
         // Verifica se o usuário já possui uma loja cadastrada
-        $this->middleware('user.has.store')->only(['create', 'store']);
+//        $this->middleware('user.has.store')->only(['create', 'store']);
     }
 
     public function index()

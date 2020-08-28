@@ -47,8 +47,14 @@
 
             <div class="input-group mb-5">
                 <div class="custom-file">
-                    <label class="custom-file-label" for="logo_id">Choose a file</label>
-                    <input type="file" class="custom-file-input @error('logo.*') is-invalid @enderror" id="logo_id" name="logo" multiple>
+                    <input
+                        type="file"
+                        class="custom-file-input @error('logo.*') is-invalid @enderror"
+                        id="logo_id"
+                        name="logo"
+                        multiple
+                    >
+                    <label class="custom-file-label" for="logo_id">Logo</label>
                 </div>
                 @error('logo.*')
                 <div class="invalid-feedback">
