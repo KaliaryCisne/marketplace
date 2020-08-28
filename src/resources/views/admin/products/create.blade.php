@@ -44,9 +44,8 @@
                 @enderror
             </div>
 
+            <input type="text" placeholder="R$ 00,00" name="price" id="price" class="form-imput-customized @error('price') is-invalid @enderror" value="{{old('price')}}" autocomplete="off">
             <div class="form-group">
-                <input type="text" placeholder="Price" name="price" class="form-imput-customized @error('price') is-invalid @enderror" value="{{old('price')}}" autocomplete="off">
-
                 @error('price')
                 <div class="invalid-feedback">
                     {{$message}}

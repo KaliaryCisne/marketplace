@@ -104,6 +104,13 @@ $('.custom-file input').change(function (e) {
 });
 Inputmask("(99) 9 9999-9999").mask("#celular");
 Inputmask("(99) 9 9999-9999").mask("#whatsapp");
+$(document).ready(function () {
+  $("#price").maskMoney({
+    prefix: "R$ ",
+    decimal: ".",
+    thousands: ","
+  });
+});
 
 /***/ }),
 

@@ -45,7 +45,7 @@
             </div>
 
             <div class="form-group">
-                <input type="text" placeholder="price" name="price" class="form-imput-customized @error('price') is-invalid @enderror" value="{{$product->price}}">
+                <input type="text" placeholder="price" name="price" id="price" class="form-imput-customized @error('price') is-invalid @enderror" value="R$ {{$product->price}}">
 
                 @error('price')
                 <div class="invalid-feedback">

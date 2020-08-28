@@ -22,6 +22,10 @@ mix.js([
     'resources/views/layouts/assets/js/form.js',
 ], 'public/js');
 
+mix.js([
+    'resources/views/layouts/assets/js/jquery.maskMoney.min.js',
+], 'public/js');
+
 mix.styles([
     'resources/views/layouts/assets/css/app.css',
     'resources/views/layouts/assets/css/buttons.css',

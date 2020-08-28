@@ -63,9 +63,10 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
 
-        //todo: verificar digitação do preço
-
         $data = $request->all();
+
+        $data['price'] = str_replace("R$ ", "", $data['price']);
+        $data['price'] = str_replace(",", "", $data['price']);
 
         $categories = $request->get('categories', null);
 
@@ -125,6 +126,9 @@ class ProductController extends Controller
     public function update(ProductRequest $request, $id)
     {
         $data = $request->all();
+        $data['price'] = str_replace("R$ ", "", $data['price']);
+        $data['price'] = str_replace(",", "", $data['price']);
+
         $categories = $request->get('categories', null);
 
         $product = $this->product->find($id);

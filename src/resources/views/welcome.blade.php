@@ -9,9 +9,9 @@
                 <div class="card" style="width: 100%;">
                     <a href="{{route('product.single', ['slug' => $product->slug])}}" class="card-customized">
                         @if($product->photos->count())
-                            <img src="{{asset('storage/' . $product->photos->first()->image)}}" alt="" class="card-img-top">
+                            <img src="{{asset('storage/' . $product->photos->first()->image)}}" alt="" class="card-img-top card-photo">
                         @else
-                            <img src="{{asset('assets/img/no-photo.jpg')}}" alt="" class="card-img-top">
+                            <img src="{{asset('assets/img/no-photo.jpg')}}" alt="" class="card-img-top card-photo">
                         @endif
                         <div class="card-body">
                             <p class="card-title">{{$product->name}}</p>

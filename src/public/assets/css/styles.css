@@ -106,7 +106,7 @@ h1 {
     color: #ffffff;
     background-color: #3483fa;
     box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
-    transform: translate(0px, -10px) scale(1.1);
+    transform: translate(0px, -10px) scale(1.01);
 }
 
 .btn-edit {
@@ -128,7 +128,7 @@ h1 {
     color: #ffffff;
     background-color: #3483fa;
     box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
-    transform: translate(0px, -10px) scale(1.2);
+    transform: translate(0px, -10px) scale(1.01);
 }
 
 .btn-detalhes {
@@ -278,6 +278,7 @@ tbody {
 }
 .card-text {
     font-size: 13px;
+    text-transform: lowercase;
 }
 
 .card-price {
@@ -288,5 +289,12 @@ tbody {
 .card-title {
     font-size: 20px;
     font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-photo {
+    padding: 5px;
+    min-height: 168px;
+    max-height: 250px;
 }
 
