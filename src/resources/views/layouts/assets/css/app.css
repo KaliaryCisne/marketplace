@@ -2,14 +2,16 @@ body {
     /*color: #7159c1*/
     font-family: Roboto, sans-serif;
     /*background-color: #1b1a1f;*/
-    background-color: #f51d46;
+    /*background-color: #f51d46;*/
+    background-color: #ebebeb;
     font-size: 16px;
     text-transform: capitalize;
-    padding: 0 10%;
+    padding: 0 0;
+    color: #333;
 }
 
 .main-container {
-    background-color: #1b1a1f;
+    /*background-color: #1b1a1f;*/
     min-height: 100vh;
     height: 100%;
     padding-bottom: 5rem;
@@ -20,9 +22,34 @@ body {
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
+    color: #333;
+    margin-left: 3rem;
 }
 
 .navbar {
-    font-weight: bold;
-    font-size: 22px;
+    font-size: 14px;
+    background-color: #fff058;
+    height: 100px;
+    width: 100%;
 }
+
+.active > a {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-link {
+    color: #333;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+h1 {
+    color: #333;
+}
+

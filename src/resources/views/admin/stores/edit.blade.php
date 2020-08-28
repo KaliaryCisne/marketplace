@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="text-white text-center form-title-customized">Edit</h1>
+    <h1 class="text-center form-title-customized">Edit</h1>
 
     <div class="row form-row-customized justify-content-center">
         <form
@@ -41,8 +41,6 @@
                     <img class="logo-stores" src="{{asset('storage/' . $store->logo)}}" alt="">
                 </p>
 
-
-
                 <div class="custom-file" style="width: 100%">
                     <input
                         type="file"
@@ -50,7 +48,7 @@
                         id="logo_id"
                         name="logo"
                     >
-                    <label class="custom-file-label" for="photos">Logo</label>
+                    <label class="custom-file-label" for="logo_id">Logo</label>
                 </div>
 
                 @error('logo.*')

@@ -2,14 +2,16 @@ body {
     /*color: #7159c1*/
     font-family: Roboto, sans-serif;
     /*background-color: #1b1a1f;*/
-    background-color: #f51d46;
+    /*background-color: #f51d46;*/
+    background-color: #ebebeb;
     font-size: 16px;
     text-transform: capitalize;
-    padding: 0 10%;
+    padding: 0 0;
+    color: #333;
 }
 
 .main-container {
-    background-color: #1b1a1f;
+    /*background-color: #1b1a1f;*/
     min-height: 100vh;
     height: 100%;
     padding-bottom: 5rem;
@@ -20,12 +22,37 @@ body {
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
+    color: #333;
+    margin-left: 3rem;
 }
 
 .navbar {
-    font-weight: bold;
-    font-size: 22px;
+    font-size: 14px;
+    background-color: #fff058;
+    height: 100px;
+    width: 100%;
 }
+
+.active > a {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.nav-link {
+    color: #333;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+h1 {
+    color: #333;
+}
+
 
 /*Alinha os botoes das opções no centro*/
 .btn-options {
@@ -33,9 +60,9 @@ body {
 }
 
 .btn-create {
-    color: white;
+    background-color: #3483fa;
+    color: #fff;
     font-weight: bold;
-    background: #0dc379;
     width: 50px;
     height: 50px;
     border-radius: 25px;
@@ -44,7 +71,7 @@ body {
     align-items: center;
     cursor: pointer;
     transition: all ease-in-out 300ms;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 10px 5px 5px #c1c1c1;
 
     /*    box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
     /*    -moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
@@ -53,17 +80,21 @@ body {
 }
 
 .btn-create:hover {
-    color: white;
+    background-color: #3483fa;
+    color: #fff;
     box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
     transform: translate(0px, -10px) scale(1.2);
 }
 
 .btn-delete {
-    color: white;
-    font-weight: bold;
-    background: #f51d46;
+    margin-left: 1rem;
+    color: #ffffff;
+    background-color: #3483fa;
+    /*font-weight: bold;*/
+    /*background: #f51d46;*/
     border-radius: 25px;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 10px 5px 5px #c1c1c1;
+    transition: all ease-in-out 300ms;
 
     /*box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
     /*-moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
@@ -72,17 +103,20 @@ body {
 }
 
 .btn-delete:hover {
-    color: white;
+    color: #ffffff;
+    background-color: #3483fa;
     box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
-    transform: translate(0px, -10px) scale(1.2);
+    transform: translate(0px, -10px) scale(1.01);
 }
 
 .btn-edit {
-    color: white;
+    color: #ffffff;
+    background-color: #3483fa;
     font-weight: bold;
-    background: #00ddba;
+    /*background: #00ddba;*/
     border-radius: 25px;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 10px 5px 5px #c1c1c1;
+    transition: all ease-in-out 300ms;
 
     /*box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
     /*-moz-box-shadow: 10px 10px  5px rgba(0,0,0,0.6);*/
@@ -91,9 +125,24 @@ body {
 }
 
 .btn-edit:hover {
-    color: white;
+    color: #ffffff;
+    background-color: #3483fa;
     box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
-    transform: translate(0px, -10px) scale(1.2);
+    transform: translate(0px, -10px) scale(1.01);
+}
+
+.btn-detalhes {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: auto 25%;
+}
+
+.btn-detalhes:hover {
+    background-color: #007bff;
+    color: #ffffff;
 }
 
 #my-table thead {
@@ -106,12 +155,14 @@ body {
 }
 
 .table {
-    background: #232228;
+    /*background: #232228;*/
+    background-color: #ffffff;
     position: relative;
     padding: 2rem 3.5rem;
     border-radius: 4px;
     /*box-shadow: 0 0 30px rgba(0, 0, 0, .2);*/
-    box-shadow: 10px 5px 5px black;
+    /*box-shadow: 10px 5px 5px black;*/
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.12);
     overflow: hidden;
 }
 
@@ -121,12 +172,18 @@ body {
 }
 
 table tbody {
-    color: white;
     border: 0px;
 }
 
+tbody {
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
 .table-red {
-    background: #f51d46;
+    /*background: #f51d46;*/
+    background: #3483fa;
     color: white;
 }
 
@@ -134,45 +191,17 @@ table tbody {
     color: white;
 }
 
-.form-row-customized {
-
-}
-
-.form-textarea-customized {
-    color: white;
-    outline: none;
-    background: none;
-    width: 100%;
-    border-radius: 4px;
-    border: 2px solid #c1c1c1;
-    padding: 0 0 .5rem .5em;
-    transition: all .25s;
-}
-
-.form-textarea-customized::placeholder {
-    color: #eee;
-    font-size: 14px;
-    text-transform: capitalize;
-    padding: 0 0 .5rem .5em;
-}
-
-.form-textarea-customized:focus {
-    border-color: #f51d46;
-    text-transform: uppercase;
-    padding: 0 0 .5rem .5em;
-}
-
-
 .form-customized {
-    border: 0.1px solid black;
-    border-radius: 4px;
-    box-shadow: 10px 5px 5px black;
+    /*border: 0.1px solid black;*/
+    border-radius: 6px;
+    /*box-shadow: 10px 5px 5px black;*/
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.12);
     padding: 3rem;
-    /*background: white;*/
+    text-color: #333;
+    background-color: #fff;
 }
 
 .form-imput-customized {
-    color: white;
     border: 0;
     outline: none;
     background: none;
@@ -180,18 +209,43 @@ table tbody {
     border-bottom: 2px solid #c1c1c1;
     padding: 0 0 .5rem .5em;
     transition: all .25s;
-
+    text-transform: uppercase;
+    font-size: 11px;
 }
 
 .form-imput-customized::placeholder {
-    color: #eee;
     font-size: 14px;
     text-transform: capitalize;
 }
 
 .form-imput-customized:focus {
-    border-color: #f51d46;
+    border-color: #3483fa;
     text-transform: uppercase;
+}
+
+.form-textarea-customized {
+    color: #333;
+    outline: none;
+    background: none;
+    width: 100%;
+    border-radius: 4px;
+    border: 2px solid #c1c1c1;
+    padding: 0 0 .5rem .5em;
+    transition: all .25s;
+    text-transform: uppercase;
+}
+
+.form-textarea-customized::placeholder {
+    color: #333;
+    font-size: 14px;
+    text-transform: capitalize;
+    padding: 0 0 .5rem .5em;
+}
+
+.form-textarea-customized:focus {
+    border-color: #3483fa;
+    text-transform: uppercase;
+    padding: 0 0 .5rem .5em;
 }
 
 .logo-stores {
@@ -199,3 +253,48 @@ table tbody {
     max-width: 100px;
     border-radius: 50px;
 }
+
+.row-cards {
+    justify-content: center;
+}
+
+.card-customized {
+    text-decoration: none;
+    color: #333;
+    border: 0;
+    transition: all ease-in-out 300ms;
+}
+
+.card-customized:hover {
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.12);
+}
+
+.card {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+}
+.card-text {
+    font-size: 13px;
+    text-transform: lowercase;
+}
+
+.card-price {
+    font-size: 18px;
+    color: #333;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-photo {
+    padding: 5px;
+    min-height: 168px;
+    max-height: 250px;
+}
+

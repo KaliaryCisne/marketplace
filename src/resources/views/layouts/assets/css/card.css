@@ -1,0 +1,44 @@
+.row-cards {
+    justify-content: center;
+}
+
+.card-customized {
+    text-decoration: none;
+    color: #333;
+    border: 0;
+    transition: all ease-in-out 300ms;
+}
+
+.card-customized:hover {
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.12);
+}
+
+.card {
+    cursor: pointer;
+    outline: none;
+    border: 0;
+}
+.card-text {
+    font-size: 13px;
+    text-transform: lowercase;
+}
+
+.card-price {
+    font-size: 18px;
+    color: #333;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-photo {
+    padding: 5px;
+    min-height: 168px;
+    max-height: 250px;
+}
+
