@@ -149,6 +149,7 @@ p, h2, h3, h1, span, input, label {
     background-color: #007bff;
     color: #ffffff;
     opacity: 0.9;
+    transition: all ease-in-out 300ms;
 }
 
 .btn-comprar:hover {

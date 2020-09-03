@@ -28,7 +28,8 @@
             <div class="product-add col-md-12">
                 <hr>
 
-                <form action="{{route(cart.add)}}" method="post">
+                <form action="{{route('cart.add')}}" method="post">
+                    @csrf
                     <input type="hidden" name="product[name]" value="{{$product->name}}">
                     <input type="hidden" name="product[price]" value="{{$product->price}}">
                     <input type="hidden" name="product[slug]" value="{{$product->slug}}">
