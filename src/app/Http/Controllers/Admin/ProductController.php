@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\Events\CreatedProduct;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Product;
@@ -16,7 +17,7 @@ class ProductController extends Controller
 
     use UploadTrait;
 
-    //todo: Criar middleware para verificar se o existe alguma loga na hora de criar um produto
+    //todo: Criar middleware para verificar se o existe alguma loja na hora de criar um produto
 
     // php artisan make:request ProductRequest => Cria um formRequest
     private $product;
@@ -62,7 +63,6 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-
         $data = $request->all();
 
         $data['price'] = str_replace("R$ ", "", $data['price']);
@@ -85,6 +85,9 @@ class ProductController extends Controller
             //Inserção das images/referencias na base
             $product->photos()->createMany($images);
         }
+
+        // Dispatching Event
+        event(new CreatedProduct($product));
 
         flash('Produto criado com sucesso!')->success();
         return redirect()->route('admin.products.index');
