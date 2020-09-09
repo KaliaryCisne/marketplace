@@ -88,3 +88,15 @@
     background-color: #007bff;
     color: #ffffff;
 }
+
+.btn-comprar {
+    background-color: #007bff;
+    color: #ffffff;
+    opacity: 0.9;
+    transition: all ease-in-out 300ms;
+}
+
+.btn-comprar:hover {
+    color: #ffffff;
+    opacity: 1;
+}

@@ -10,6 +10,10 @@ body {
     color: #333;
 }
 
+p, h2, h3, h1, span, input, label {
+    color: #333;
+}
+
 .main-container {
     /*background-color: #1b1a1f;*/
     min-height: 100vh;
@@ -47,10 +51,6 @@ body {
 .nav-link:hover {
     color: #333;
     text-decoration: underline;
-}
-
-h1 {
-    color: #333;
 }
 
 
@@ -143,6 +143,18 @@ h1 {
 .btn-detalhes:hover {
     background-color: #007bff;
     color: #ffffff;
+}
+
+.btn-comprar {
+    background-color: #007bff;
+    color: #ffffff;
+    opacity: 0.9;
+    transition: all ease-in-out 300ms;
+}
+
+.btn-comprar:hover {
+    color: #ffffff;
+    opacity: 1;
 }
 
 #my-table thead {
