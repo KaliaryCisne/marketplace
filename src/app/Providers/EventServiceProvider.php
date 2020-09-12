@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Events\CreatedProduct;
+use App\Events\ProductUpdated;
+use App\Listeners\ProductUpdatedListener;
 use App\Listeners\RegisterLogProduct;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -16,6 +18,9 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         CreatedProduct::class => [
           RegisterLogProduct::class,
+        ],
+        ProductUpdated::class => [
+            ProductUpdatedListener::class,
         ],
     ];
 

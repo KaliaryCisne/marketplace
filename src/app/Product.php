@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Listeners\ProductCreated;
+use App\Events\ProductUpdated;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -47,7 +47,7 @@ class Product extends Model
     }
 
     protected $dispatchesEvents = [
-        'updated' => ProductCreated::class,
+        'updated' => ProductUpdated::class,
     ];
 
 }
