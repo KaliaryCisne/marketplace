@@ -5,7 +5,6 @@ namespace App\Listeners;
 use App\Events\ProductUpdated;
 use App\ProductLog;
 use Illuminate\Support\Facades\Log;
-use Monolog\Logger;
 
 class ProductUpdatedListener
 {
