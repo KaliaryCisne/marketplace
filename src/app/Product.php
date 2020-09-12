@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Listeners\ProductCreated;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -45,5 +46,8 @@ class Product extends Model
         return $this->hasMany(ProductPhoto::class);
     }
 
+    protected $dispatchesEvents = [
+        'updated' => ProductCreated::class,
+    ];
 
 }
