@@ -27,6 +27,6 @@ class RegisterLogProduct
     public function handle(CreatedProduct $event)
     {
         //Registra log
-        Log::info($event->product(), "");
+        Log::info($event->product());
     }
 }
