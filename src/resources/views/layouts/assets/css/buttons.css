@@ -92,8 +92,10 @@
 .btn-comprar {
     background-color: #007bff;
     color: #ffffff;
-    opacity: 0.9;
+    opacity: 0.8;
     transition: all ease-in-out 300ms;
+    font-weight: bold;
+    font-size: 26px;
 }
 
 .btn-comprar:hover {

@@ -28,7 +28,7 @@
                     </a>
                 </div>
             </div>
-            @if(($key + 1) % 3 == 0) </div><div class="row mt-3 mb-2"> @endif
+            @if(($key + 1) % 3 == 0) </div><div class="row row-cards mt-2 mb-2"> @endif
         @endforeach
     </div>
 

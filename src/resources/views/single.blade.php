@@ -37,7 +37,7 @@
                         <label>Quantidade</label>
                         <input type="number" name="product[amount]" class="form-control col-md-1" value="1">
                     </div>
-                    <button class="btn btn-comprar">Comprar agora</button>
+                    <button class="btn btn-lg btn-comprar">Comprar agora</button>
                 </form>
             </div>
 
