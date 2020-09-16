@@ -16,11 +16,14 @@
 
     <link rel="stylesheet" href="{{url(mix('assets/css/styles.css')) }}" type="text/css" >
     <link rel="stylesheet" href="{{asset('assets/icons/css/font-awesome.min.css')}}">
+
+    <link rel="sortcut icon" href="{{asset('assets/img/logo-marketplace-2.png')}}" type="image/png">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg mb-5 container-fluid">
 
-        <a class="navbar-brand" href="#" id="logo_marketplace">Marketplace L6</a>
+{{--        <a class="navbar-brand" href="#" id="logo_marketplace">Marketplace L6</a>--}}
+        <img src="{{asset('assets/img/logo-marketplace-2.png')}}" width="80" alt="logo" id="logo_marketplace">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,25 +34,28 @@
 
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item @if(request()->is('/')) active @endif">
-                        <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('home')}}"><i class="fa fa-home fa-lg" aria-hidden="true"></i>&nbsp; Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item @if(request()->is('admin/stores*')) active @endif">
-                        <a class="nav-link" href="{{route('admin.stores.index')}}">Stores <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('admin.stores.index')}}"><i class="fa fa-building" aria-hidden="true"></i>&nbsp; Loja <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item @if(request()->is('admin/products*')) active @endif">
-                        <a class="nav-link" href="{{route('admin.products.index')}}">Products</a>
+                        <a class="nav-link" href="{{route('admin.products.index')}}"><i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp; Produtos</a>
                     </li>
                     <li class="nav-item @if(request()->is('admin/categories*')) active @endif">
-                        <a class="nav-link" href="{{route('admin.categories.index')}}">Categories</a>
+                        <a class="nav-link" href="{{route('admin.categories.index')}}"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp; Categorias</a>
+                    </li>
+                    <li class="nav-item @if(request()->is('cart*')) active @endif">
+                        <a class="nav-link" href="{{route('cart.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Carrinho</a>
                     </li>
                 </ul>
                 <div class="my-2 my-lg-0">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <span class="nav-link">{{auth()->user()->name}}</span>
+                    <ul class="navbar-nav mr-auto ul-infos-right-side">
+                        <li class="nav-item mr-4">
+                            <span class="nav-link btn-usuario"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>&nbsp; {{auth()->user()->name}}</span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-md" href="#" onclick="event.preventDefault(); document.querySelector('form.logout').submit();"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                            <a class="nav-link btn btn-md btn-sair" href="#" onclick="event.preventDefault(); document.querySelector('form.logout').submit();"><i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>&nbsp; Sair</a>
                             <form action="{{route('logout')}}" class="logout" method="POST" style="display: none;">
                                 @csrf
                             </form>
@@ -59,9 +65,9 @@
             @endauth
             @guest
 
-                <ul class="navbar-nav float-right">
+                <ul class="navbar-nav ul-botao-registrar">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('register')}}">Register<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('register')}}"><i class="fa fa-user-plus fa-lg" aria-hidden="true"></i>&nbsp; Register<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
 
