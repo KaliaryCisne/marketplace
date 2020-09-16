@@ -14,7 +14,7 @@
                         <th class="th-no-border">Preço</th>
                         <th class="th-no-border">Quantidade</th>
                         <th class="th-no-border">Subtotal</th>
-                        <th class="th-no-border">Ação</th>
+                        <th class="th-no-border">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,7 +35,7 @@
                             <td class="th-no-border">R$ {{number_format(($subtotal), 2, ',', '.')}}</td>
                             <td class="td-no-border" width="15%">
                                 <div class="row btn-options">
-                                    <a href="" class="btn btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    <a href="{{route('cart.remove', ['slug' => $c['slug']])}}" class="btn btn-delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                 </div>
                             </td>
                         </tr>

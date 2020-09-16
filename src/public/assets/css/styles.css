@@ -275,29 +275,42 @@ tbody {
 .card-customized {
     text-decoration: none;
     color: #333;
-    border: 0;
-    transition: all ease-in-out 300ms;
 }
 
 .card-customized:hover {
     text-decoration: none;
-    color: #333;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,.12);
+    /*color: #333;*/
 }
 
 .card {
     cursor: pointer;
     outline: none;
     border: 0;
+    border-bottom: 0.1px solid #ccc;
+    border-radius: 8px;
+    transition: all ease-in-out 300ms;
 }
-.card-text {
-    font-size: 13px;
-    text-transform: lowercase;
+
+.card:hover {
+    color: #333;
+    box-shadow: 5px 8px 10px 3px rgba(0,0,0,.20);
+    overflow: hidden;
+}
+
+.card-body {
+
 }
 
 .card-price {
     font-size: 18px;
     color: #333;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 13px;
+    text-transform: lowercase;
+    color: #666;
 }
 
 .card-title {
