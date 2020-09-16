@@ -31,4 +31,19 @@ class CartController extends Controller
         return redirect()->route('admin.products.index');
 //        return redirect()->route('product.single', ['slug' => $product['slug']]);
     }
+
+    public function remove($slug)
+    {
+        if(!session()->has('cart'))
+            return redirect()->route('cart.index');
+
+        $products = session()->get('cart');
+
+        $products = array_filter($products, function ($line) use($slug) {
+           return $line['slug'] != $slug;
+        });
+
+        session()->put('cart', $products);
+        return redirect()->route('cart.index');
+    }
 }

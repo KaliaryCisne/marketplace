@@ -7,8 +7,9 @@
             <hr>
         </div>
         <div class="col-12">
-            <table class="table" id="my-table">
-                <thead class="table-red">
+            @if($cart)
+                <table class="table" id="my-table">
+                    <thead class="table-red">
                     <tr>
                         <th class="th-no-border">Produto</th>
                         <th class="th-no-border">Preço</th>
@@ -16,8 +17,8 @@
                         <th class="th-no-border">Subtotal</th>
                         <th class="th-no-border">Ações</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
 
                     @php $total = 0; @endphp
 
@@ -45,8 +46,11 @@
                         <td colspan="1"> R$ {{number_format(($total), 2, ',', '.')}}</td>
                         <td></td> {{-- Não remover --}}
                     </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            @else
+                <div class="alert alert-warning">Carrinho vazio...</div>
+            @endif
         </div>
     </div>
 @endsection
