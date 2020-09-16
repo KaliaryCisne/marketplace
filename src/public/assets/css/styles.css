@@ -15,7 +15,6 @@ p, h2, h3, h1, span, input, label {
 }
 
 .main-container {
-    /*background-color: #1b1a1f;*/
     min-height: 100vh;
     height: 100%;
     padding-bottom: 5rem;
@@ -23,36 +22,64 @@ p, h2, h3, h1, span, input, label {
 }
 
 #logo_marketplace {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #333;
+    /*font-size: 24px;*/
+    /*font-weight: bold;*/
+    /*text-transform: uppercase;*/
+    /*color: #333;*/
     margin-left: 3rem;
+    margin-right: 3rem;
+    background-color: white;
+    border-radius: 40px;
 }
 
 .navbar {
-    font-size: 14px;
     background-color: #fff058;
     height: 100px;
     width: 100%;
 }
 
 .active > a {
-    text-decoration: underline;
     font-weight: bold;
     font-size: 16px;
+    color: #333;
 }
 
 .nav-link {
-    color: #333;
+    font-size: 14px;
     cursor: pointer;
+    color: rgba(51,51,51,.6);
 }
 
 .nav-link:hover {
     color: #333;
-    text-decoration: underline;
 }
 
+.ul-home-visitante {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ul-botao-registrar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-usuario {
+    display: flex;
+    align-items: center;
+}
+
+.btn-sair {
+    display: flex;
+    align-items: center;
+}
+
+.ul-infos-right-side {
+    display: flex;
+    align-items: center;
+}
 
 /*Alinha os botoes das opções no centro*/
 .btn-options {
@@ -148,12 +175,40 @@ p, h2, h3, h1, span, input, label {
 .btn-comprar {
     background-color: #007bff;
     color: #ffffff;
-    opacity: 0.9;
+    opacity: 0.8;
     transition: all ease-in-out 300ms;
+    font-weight: bold;
+    font-size: 26px;
 }
 
 .btn-comprar:hover {
     color: #ffffff;
+    opacity: 1;
+}
+
+.btn-adicionar-carrinho {
+    color: #3483fa;
+    background-color: rgba(65,137,230,.15);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 48px;
+    padding: 0 24px;
+    height: 48px;
+    text-align: center;
+    border-radius: 6px;
+    opacity: 0.9;
+}
+
+.btn-adicionar-carrinho:hover {
+    color: #3483fa;
+    background-color: rgba(65,137,230,.15);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 48px;
+    padding: 0 24px;
+    height: 48px;
+    text-align: center;
+    border-radius: 6px;
     opacity: 1;
 }
 
@@ -201,6 +256,12 @@ tbody {
 
 .single-infos, .single-body {
     color: white;
+}
+
+.infos-produto {
+    border-radius: 6px;
+    background-color: white;
+    padding: 3rem;
 }
 
 .form-customized {
@@ -273,29 +334,42 @@ tbody {
 .card-customized {
     text-decoration: none;
     color: #333;
-    border: 0;
-    transition: all ease-in-out 300ms;
 }
 
 .card-customized:hover {
     text-decoration: none;
-    color: #333;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,.12);
+    /*color: #333;*/
 }
 
 .card {
     cursor: pointer;
     outline: none;
     border: 0;
+    border-bottom: 0.1px solid #ccc;
+    border-radius: 8px;
+    transition: all ease-in-out 300ms;
 }
-.card-text {
-    font-size: 13px;
-    text-transform: lowercase;
+
+.card:hover {
+    color: #333;
+    box-shadow: 5px 8px 10px 3px rgba(0,0,0,.20);
+    overflow: hidden;
+}
+
+.card-body {
+
 }
 
 .card-price {
     font-size: 18px;
     color: #333;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 13px;
+    text-transform: lowercase;
+    color: #666;
 }
 
 .card-title {

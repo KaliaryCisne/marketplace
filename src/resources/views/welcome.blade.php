@@ -13,13 +13,14 @@
                         @else
                             <img src="{{asset('assets/img/no-photo.jpg')}}" alt="" class="card-img-top card-photo">
                         @endif
+                        <hr>
                         <div class="card-body">
-                            <p class="card-title">{{$product->name}}</p>
-                            <p class="card-text">
-                                {{$product->description}}
-                            </p>
+{{--                            <p class="card-title">{{$product->name}}</p>--}}
                             <p class="card-price">
                                 R$ {{number_format($product->price, "2", ",", ".")}}
+                            </p>
+                            <p class="card-text">
+                                {{$product->description}}
                             </p>
                             {{--                        <a href="{{route('product.single', ['slug' => $product->slug])}}" class="btn-detalhes">--}}
                             {{--                            see more--}}
@@ -28,7 +29,7 @@
                     </a>
                 </div>
             </div>
-            @if(($key + 1) % 3 == 0) </div><div class="row mt-3 mb-2"> @endif
+            @if(($key + 1) % 3 == 0) </div><div class="row row-cards mt-2 mb-2"> @endif
         @endforeach
     </div>
 
