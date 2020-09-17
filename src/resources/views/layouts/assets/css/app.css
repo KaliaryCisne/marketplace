@@ -22,14 +22,11 @@ p, h2, h3, h1, span, input, label {
 }
 
 #logo_marketplace {
-    /*font-size: 24px;*/
-    /*font-weight: bold;*/
-    /*text-transform: uppercase;*/
-    /*color: #333;*/
     margin-left: 3rem;
     margin-right: 3rem;
     background-color: white;
     border-radius: 40px;
+    border: 1px solid #ccc;
 }
 
 .navbar {
