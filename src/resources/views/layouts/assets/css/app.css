@@ -30,9 +30,11 @@ p, h2, h3, h1, span, input, label {
 }
 
 .navbar {
-    background-color: #fff058;
+    /*background-color: #fff058;*/
+    background-color: #fff159;
     height: 100px;
     width: 100%;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,.20);
 }
 
 .active > a {
