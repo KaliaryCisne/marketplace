@@ -46,7 +46,13 @@
                         <a class="nav-link" href="{{route('admin.categories.index')}}"><i class="fa fa-tags" aria-hidden="true"></i>&nbsp; Categorias</a>
                     </li>
                     <li class="nav-item @if(request()->is('cart*')) active @endif">
-                        <a class="nav-link" href="{{route('cart.index')}}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Carrinho</a>
+                        <a class="nav-link" href="{{route('cart.index')}}">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;
+                            @if(session()->has('cart'))
+                                <span class="badge badge-danger alert-qtd-itens-carrinho">{{count(session()->get('cart'))}}</span>
+                            @endif
+                            Carrinho
+                        </a>
                     </li>
                 </ul>
                 <div class="my-2 my-lg-0">

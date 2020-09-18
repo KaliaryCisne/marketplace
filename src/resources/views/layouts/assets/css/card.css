@@ -64,6 +64,17 @@
 }
 
 #img-principal-single {
-    width: 100%;
+    max-width: 100%;
+    max-height: 46%;
+}
+
+.alert-qtd-itens-carrinho {
+    position: relative;
+    font-size: 9px;
+    top: auto;
+    bottom: 13px;
+    right: auto;
+    left: 0;
+    margin-left: -14px;
 }
 
