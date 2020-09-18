@@ -28,7 +28,7 @@ class CartController extends Controller
         }
 
         flash('Produto adicionado no carrinho!')->success();
-        return redirect()->route('admin.products.index');
+        return redirect()->route('home');
 //        return redirect()->route('product.single', ['slug' => $product['slug']]);
     }
 
@@ -45,5 +45,13 @@ class CartController extends Controller
 
         session()->put('cart', $products);
         return redirect()->route('cart.index');
+    }
+
+    public function cancel()
+    {
+        session()->forget('cart');
+
+        flash('Esperamos que em breve encontre produtos que lhe agrade <3')->success();
+        return redirect()->route('home');
     }
 }

@@ -4,9 +4,9 @@
 
     <div class="infos-produto">
         <div class="row single-infos">
-            <div class="col-4">
+            <div class="col-6">
                 @if($product->photos->count())
-                    <img src="{{asset('storage/' . $product->photos->first()->image)}}" alt="" class="card-img-top">
+                    <img src="{{asset('storage/' . $product->photos->first()->image)}}" id="img-principal-single" alt="" class="card-img-top">
                     <div class="row mt-4">
                         @foreach($product->photos as $photo)
                             <div class="col-4">
@@ -18,7 +18,7 @@
                     <img src="{{asset('assets/img/no-photo.jpg')}}" alt="" class="card-img-top">
                 @endif
             </div>
-            <div class="col-8">
+            <div class="col-6">
                 <div class="col-md-12">
                     <h2>{{$product->name}}</h2>
                     <p>{{$product->description}}</p>
@@ -36,7 +36,7 @@
                         <input type="hidden" name="product[slug]" value="{{$product->slug}}">
                         <div class="form-group">
                             <label>Quantidade:</label>
-                            <input type="number" name="product[amount]" class="form-control col-md-1" value="1">
+                            <input type="number" name="product[amount]" class="form-control col-md-2" value="1">
                         </div>
                         <button class="btn btn-md btn-adicionar-carrinho">Adicionar ao carrinho</button>
                     </form>

@@ -30,9 +30,11 @@ p, h2, h3, h1, span, input, label {
 }
 
 .navbar {
-    background-color: #fff058;
+    /*background-color: #fff058;*/
+    background-color: #fff159;
     height: 100px;
     width: 100%;
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,.20);
 }
 
 .active > a {
@@ -169,6 +171,41 @@ p, h2, h3, h1, span, input, label {
 
 .btn-adicionar-carrinho:hover {
     color: #3483fa;
+    /*background-color: rgba(65,137,230,.15);*/
+    /*font-size: 16px;*/
+    /*font-weight: 600;*/
+    /*line-height: 48px;*/
+    /*padding: 0 24px;*/
+    /*height: 48px;*/
+    /*text-align: center;*/
+    /*border-radius: 6px;*/
+    opacity: 1;
+}
+
+.alinhar-icones {
+    display: flex;
+    align-items: baseline;
+}
+
+.btn-confirmar-compra {
+    background-color: #007bff;
+    color: #ffffff;
+    opacity: 0.8;
+    transition: all ease-in-out 300ms;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 48px;
+    padding: 0 24px;
+    height: 48px;
+}
+
+.btn-confirmar-compra:hover {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.btn-desistir-compra {
+    color: #3483fa;
     background-color: rgba(65,137,230,.15);
     font-size: 16px;
     font-weight: 600;
@@ -177,12 +214,12 @@ p, h2, h3, h1, span, input, label {
     height: 48px;
     text-align: center;
     border-radius: 6px;
-    opacity: 1;
+    opacity: 0.8;
 }
 
-.alinhar-icones {
-    display: flex;
-    align-items: baseline;
+.btn-desistir-compra:hover {
+    color: #3483fa;
+    opacity: 1;
 }
 
 #my-table thead {
@@ -355,5 +392,28 @@ tbody {
     padding: 5px;
     min-height: 168px;
     max-height: 250px;
+    max-width: 95%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card-img-top {
+    width: auto;
+}
+
+#img-principal-single {
+    max-width: 100%;
+    max-height: 46%;
+}
+
+.alert-qtd-itens-carrinho {
+    position: relative;
+    font-size: 9px;
+    top: auto;
+    bottom: 13px;
+    right: auto;
+    left: 0;
+    margin-left: -14px;
 }
 
