@@ -19,17 +19,27 @@ class CartController extends Controller
 
         if (session()->has('cart')) {
             //Existindo, adiciono este produto na sessao existente
-            session()->push('cart', $product);
+
+            $products = session()->get('cart');
+            $productsSlugs = array_column($products, 'slug');
+
+            if(in_array($product['slug'], $productsSlugs)) {
+
+                $products = $this->productIncrement($product['slug'], $product['amount'], $products);
+
+                session()->put('cart', $products);
+            } else {
+                session()->push('cart', $product);
+            }
+
         } else {
             //Não existindo eu cria esta sessão com o primeiro produto
             $products[] = $product;
-
             session()->put('cart', $products);
         }
 
         flash('Produto adicionado no carrinho!')->success();
         return redirect()->route('home');
-//        return redirect()->route('product.single', ['slug' => $product['slug']]);
     }
 
     public function remove($slug)
@@ -53,5 +63,17 @@ class CartController extends Controller
 
         flash('Esperamos que em breve encontre produtos que lhe agrade <3')->success();
         return redirect()->route('home');
+    }
+
+    private function productIncrement($slug, $amount, $products)
+    {
+        $products = array_map(function ($line) use($slug, $amount) {
+            if($slug === $line['slug']) {
+                $line['amount'] += $amount;
+            }
+            return $line;
+        }, $products);
+
+        return $products;
     }
 }
