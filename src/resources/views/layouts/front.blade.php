@@ -51,7 +51,11 @@
                         <a class="nav-link" href="{{route('cart.index')}}">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;
                             @if(session()->has('cart'))
-                                <span class="badge badge-danger alert-qtd-itens-carrinho">{{count(session()->get('cart'))}}</span>
+                                @if(count(session()->get('cart')) > 5)
+                                    <span class="badge badge-danger alert-qtd-itens-carrinho">5+</span>
+                                @elseif(count(session()->get('cart')) > 0 && count(session()->get('cart')) <= 5)
+                                    <span class="badge badge-danger alert-qtd-itens-carrinho">{{count(session()->get('cart'))}}</span>
+                                @endif
                             @endif
                             Carrinho
                         </a>
