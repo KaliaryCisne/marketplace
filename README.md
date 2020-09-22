@@ -42,5 +42,15 @@ basic project with laravel framework.
     docker exec -it [container_id] [command]
 ```
 
+## Creating tables
+```bash
+    php artisan migrate
+```
+
+## Enter test data into the database
+```bash
+    php artisan db:seed
+```
+
 ## License
 [MIT](https://github.com/KaliaryCisne/marketplace/blob/master/LICENSE)
