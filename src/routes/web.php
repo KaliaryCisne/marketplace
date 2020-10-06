@@ -13,15 +13,16 @@ Route::prefix('cart')->name('cart.')->group(function () {
     Route::get('cancel', 'CartController@cancel')->name('cancel');
 });
 
-Route::group(['middleware' => ['auth']], function () {
+Route::prefix('checkout')->name('checkout.')->group(function () {
+    Route::get('/', 'CheckoutController@index')->name('index');
+});
 
-    //Inclui os arquivos de rotas administrativas
+Route::group(['middleware' => ['auth']], function () {
     Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         $basePath = App::basePath();
         foreach(glob($basePath.'/routes/admin/*-routes.php') as $route) {
             include $route;
         }
-
         Route::post('photos/remove', 'ProductPhotoController@removePhoto')->name('photo.remove');
     });
 });
