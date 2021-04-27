@@ -24,7 +24,6 @@ services:
     volumes:
     - ./src/:/var/www
     command: "bash -c 'composer install;
-                       cp /var/www/.env.example /var/www/.env;
                        php artisan key:generate;
                        php artisan migrate;
                        php artisan serve;
