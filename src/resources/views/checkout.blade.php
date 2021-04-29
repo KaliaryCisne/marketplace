@@ -77,6 +77,7 @@
 
     <script>
 
+        let amounttransaction = '{{$cartItems}}';
         let cardNumber = document.querySelector('input[name=card_number]');
         let spanBrand = document.querySelector('span.brand');
 
@@ -90,7 +91,7 @@
                         spanBrand.innerHTML = imgFlag;
                         document.querySelector('input[name=card_brand]').value = res.brand.name;
 
-                        getInstallments(40, res.brand.name);
+                        getInstallments(amounttransaction, res.brand.name);
                     },
                     error: function (err) {
                         console.log(err);
@@ -129,14 +130,16 @@
         function proccessPayment(token)
         {
             let data = {
-                token: token,
+                card_token: token,
                 hash: PagSeguroDirectPayment.getSenderHash(),
-                installment: document.querySelector('select_installments').value
+                installment: document.querySelector('select.select_installments').value,
+                card_name: document.querySelector('input[name=card_name]').value,
+                _token: '{{csrf_token()}}'
             };
 
             $.ajax({
                 type: 'POST',
-                url: '',
+                url: '{{route('checkout.proccess')}}',
                 data: data,
                 dataType: 'json',
                 success: function (res) {
