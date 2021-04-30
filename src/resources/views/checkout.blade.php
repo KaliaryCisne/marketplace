@@ -143,8 +143,12 @@
                 data: data,
                 dataType: 'json',
                 success: function (res) {
+                    alert(res.data.message)
+                },
+                error: function (res) {
                     console.log(res);
-                }
+                    alert("Houve um erro inesperado!")
+                },
             });
         }
 
