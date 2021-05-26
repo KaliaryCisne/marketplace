@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ url(mix('assets/css/styles.css')) }}" type="text/css" >
     <link rel="stylesheet" href="{{asset('assets/icons/css/font-awesome.min.css')}}">
     <link rel="sortcut icon" href="{{asset('assets/img/logo-marketplace-2.png')}}" type="image/png">
+    @yield('stylesheets')
 </head>
 <body>
     <nav class="navbar navbar-expand-lg mb-5">
@@ -27,6 +28,21 @@
                     <li class="nav-item @if(request()->is('/')) active @endif">
                         <a class="nav-link" href="{{route('home')}}"><i class="fa fa-home fa-lg" aria-hidden="true"></i>&nbsp; Home <span class="sr-only">(current)</span></a>
                     </li>
+
+                    <li class="nav-item @if(request()->is('cart*')) active @endif" id="cart-not-loged">
+                        <a class="nav-link" href="{{route('cart.index')}}">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;
+                            @if(session()->has('cart'))
+                                @if(count(session()->get('cart')) > 5)
+                                    <span class="badge badge-danger alert-qtd-itens-carrinho">5+</span>
+                                @elseif(count(session()->get('cart')) > 0 && count(session()->get('cart')) <= 5)
+                                    <span class="badge badge-danger alert-qtd-itens-carrinho">{{count(session()->get('cart'))}}</span>
+                                @endif
+                            @endif
+                            Carrinho
+                        </a>
+                    </li>
+
                     <li class="nav-item @if(request()->is('/login')) active @endif">
                         <a class="nav-link" href="{{route('login')}}"><i class="fa fa-sign-in fa-lg" aria-hidden="true"></i>&nbsp; Entrar <span class="sr-only">(current)</span></a>
                     </li>
@@ -86,5 +102,6 @@
             @yield('content')
         </div>
     </div>
+@yield('scripts')
 </body>
 </html>

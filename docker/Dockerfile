@@ -60,7 +60,7 @@ COPY ./docker/locale.gen /etc/locale.gen
 
 COPY ./docker/xdebug.ini /etc/php/7.4/cli/conf.d/20-xdebug.ini
 
-COPY ./src/.env.example /var/www/.env
+#COPY ./src/.env.example /var/www/.env
 
 WORKDIR /var/www
 
