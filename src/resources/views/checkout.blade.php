@@ -1,5 +1,9 @@
 @extends('layouts.front')
 
+@section('stylesheets')
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+@endsection
+
 @section('content')
 
 <div class="container">
@@ -65,9 +69,11 @@
 @section('scripts')
     <script
         type="text/javascript"
-        src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"
-    ></script>
-    <script src="{{asset('assets/js/jquery.ajax.js')}}"></script>
+        src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
         const sessionId = '{{session()->get('pagseguro_session_code')}}';
@@ -108,6 +114,7 @@
         submitButton.addEventListener('click', function (event) {
             event.preventDefault();
 
+            submitButton.disabled = true;
             PagSeguroDirectPayment.createCardToken({
                 cardNumber:         document.querySelector('input[name=card_number]').value,
                 brand:              document.querySelector('input[name=card_brand]').value,
@@ -115,11 +122,11 @@
                 expirationMonth:    document.querySelector('input[name=card_month]').value,
                 expirationYear:    document.querySelector('input[name=card_year]').value,
                 success:  function (res) {
-                  console.log(res);
                   proccessPayment(res.card.token)
                 },
                 error:  function (res) {
                     console.log(res);
+                    submitButton.disabled = false;
                 },
                 complete:  function (res) {
                     console.log(res);
@@ -139,11 +146,17 @@
 
             $.ajax({
                 type: 'POST',
-                url: '{{route('checkout.proccess')}}',
+                url: '{{route("checkout.proccess")}}',
                 data: data,
                 dataType: 'json',
                 success: function (res) {
-                    alert(res.data.message)
+                    // Exibe mensagem de confirmação
+                    toastr.success(res.data.message, 'Sucesso');
+
+                    // Redireciona para pagina de agradecimento
+                    setTimeout(function () {
+                        window.location.href = '{{route('checkout.thanks')}}?order=' + res.data.order;
+                    }, 6000);
                 },
                 error: function (res) {
                     console.log(res);

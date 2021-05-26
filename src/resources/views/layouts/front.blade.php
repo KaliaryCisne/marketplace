@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ url(mix('assets/css/styles.css')) }}" type="text/css" >
     <link rel="stylesheet" href="{{asset('assets/icons/css/font-awesome.min.css')}}">
     <link rel="sortcut icon" href="{{asset('assets/img/logo-marketplace-2.png')}}" type="image/png">
+    @yield('stylesheets')
 </head>
 <body>
     <nav class="navbar navbar-expand-lg mb-5">
