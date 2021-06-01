@@ -16,7 +16,6 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg mb-5">
-{{--        <a class="navbar-brand" href="{{route('home')}}" id="logo_marketplace">Marketplace L6</a>--}}
         <img src="{{asset('assets/img/logo-marketplace-2.png')}}" width="80" alt="logo" id="logo_marketplace">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,6 +27,14 @@
                     <li class="nav-item @if(request()->is('/')) active @endif">
                         <a class="nav-link" href="{{route('home')}}"><i class="fa fa-home fa-lg" aria-hidden="true"></i>&nbsp; Home <span class="sr-only">(current)</span></a>
                     </li>
+
+                    @foreach($categories as $category)
+                        <li class="nav-item @if(request()->is('category/' .  $category->slug)) active @endif">
+                            <a class="nav-link"
+                               href="{{route('category.single', ['slug' => $category->slug])}}"
+                            >{{$category->name}}</a>
+                        </li>
+                    @endforeach
 
                     <li class="nav-item @if(request()->is('cart*')) active @endif" id="cart-not-loged">
                         <a class="nav-link" href="{{route('cart.index')}}">
