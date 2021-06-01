@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Category;
 use App\Product;
+use App\Store;
 
 class HomeController extends Controller
 {
@@ -21,9 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = $this->product->limit(8)->orderBy('id', 'DESC')->get();
+        $products = $this->product->limit(6)->orderBy('id', 'DESC')->get();
+        $stores = Store::limit(3)->orderBy('id', 'DESC')->get();
 
-        return view('welcome', compact('products'));
+        return view('welcome', compact('products', 'stores'));
 
     }
 
