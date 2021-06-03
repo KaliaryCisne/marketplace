@@ -32,6 +32,7 @@ class CheckoutController extends Controller
             $dataPost = $request->all();
             $user = auth()->user();
             $cardItems = session()->get('cart');
+            $stores = array_unique(array_column($cardItems, 'store_id'));
             $reference = 'XPTO';
 
             $creditCardPayment = new CreditdCard($cardItems, $user, $dataPost, $reference);
@@ -45,7 +46,9 @@ class CheckoutController extends Controller
                 'store_id' => 2
             ];
 
-            $user->orders()->create($userOrder);
+           $userOrder = $user->orders()->create($userOrder);
+           $userOrder->stores()->sync($stores);
+
 
             session()->forget('cart');
             session()->forget('pagseguro_session_code');
