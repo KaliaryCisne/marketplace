@@ -28,6 +28,7 @@ Route::group(['middleware' => ['auth']], function () {
             include $route;
         }
         Route::post('photos/remove', 'ProductPhotoController@removePhoto')->name('photo.remove');
+        Route::get('orders/my', 'OrdersController@index');
     });
 });
 

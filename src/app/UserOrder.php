@@ -20,6 +20,7 @@ class  UserOrder extends Model
 
     public function stores()
     {
+        // 3 parametro é chave extrangeira em relação a esse model
         return $this->belongsToMany(Store::class, 'order_store', 'order_id');
     }
 }
