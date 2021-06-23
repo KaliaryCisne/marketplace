@@ -58,6 +58,9 @@
 
             @auth
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item @if(request()->is('my-orders')) active @endif">
+                        <a href="{{route('user.orders')}}" class="nav-link">Meus Pedidos</a>
+                    </li>
                     <li class="nav-item @if(request()->is('/')) active @endif">
                         <a class="nav-link" href="{{route('home')}}"><i class="fa fa-home fa-lg" aria-hidden="true"></i>&nbsp; Home<span class="sr-only" alt="home">(current)</span></a>
                     </li>
@@ -99,7 +102,6 @@
                     </ul>
                 </div>
             @endauth
-
         </div>
     </nav>
 
@@ -109,6 +111,9 @@
             @yield('content')
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 @yield('scripts')
 </body>
 </html>
