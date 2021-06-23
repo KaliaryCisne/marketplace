@@ -42,6 +42,8 @@ class Store extends Model
 
     public function orders()
     {
-        return $this->hasMany(UserOrder::class);
+        // 3º poramentro referencia a coluna na tabela order_store que relaciona com a tabela store
+        // 4º parametro relaciona a tabela de order_store com a tabela de store
+        return $this->belongsToMany(UserOrder::class, 'order_store', 'store_id', 'order_id');
     }
 }
